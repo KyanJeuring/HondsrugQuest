@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#pageTitle {
+    font-family: MyriadPro-BoldCond, sans-serif;
+    font-size: 250%
+}
