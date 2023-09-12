@@ -6,5 +6,7 @@
 #pageTitle {
     font-family: MyriadPro-BoldCond, sans-serif;
     font-size: 250%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     text-align: center;
 }

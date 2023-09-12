@@ -1,5 +1,4 @@
 ul.navBar {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -9,9 +8,16 @@ ul.navBar {
 
 ul.navBar li {
     float: left;
+    list-style-type: none;
 }
 
-ul.navBar li a {
+ul.navBarRight li {
+    float: right;
+    list-style-type: none;
+}
+
+
+ul.navBar a {
     display: block;
     color: white;
     text-align: center;
@@ -19,11 +25,11 @@ ul.navBar li a {
     text-decoration: none;
 }
 
-ul.navBar li a.active {
+ul.navBar a.active {
     background-color: #016f91;
 }
 
-ul.navBar li a:hover {
+ul.navBar a:hover {
     background-color: #001319;
     color: #f37020;
 }
