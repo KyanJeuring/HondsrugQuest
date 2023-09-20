@@ -6,6 +6,12 @@
     <link rel="icon" href="/assets/HCLogo.ico" />
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <link rel="stylesheet" type="text/css" href="/css/navBar.css" />
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    </head>
     </head>
     <body>
         <ul class="navBar">
@@ -17,5 +23,16 @@
         </ul>
         <h1 id="pageTitle">Login</h1>
         <hr>
+        <center>
+        <form class="loginform" action="inlog.php">
+           <h2 id="pageTitle">gebruikersnaam:</h2>
+              <Textarea maxlength ="16"></Textarea>
+            <br>
+            <h2 id="pageTitle">wachtwoord:</h2>
+            <Textarea maxlength ="16"></Textarea>
+            <br>
+            <input type="submit" value="Submit">
+          </form>
+          </center>
     </body>
 </html>
