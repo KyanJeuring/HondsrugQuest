@@ -1,23 +1,27 @@
-ul.navBar {
+nav{
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #0182aa;
     font-family: MyriadPro-Regular, sans-serif;
+    
+
 }
 
-ul.navBar li {
+nav > ul > li{
+    list-style-type: none;
+}
+
+#navBarLeft li {
     float: left;
-    list-style-type: none;
 }
 
-ul.navBarRight li {
+#navBarRight li {
     float: right;
-    list-style-type: none;
+
 }
 
-
-ul.navBar a {
+nav a {
     display: block;
     color: white;
     text-align: center;
@@ -25,11 +29,11 @@ ul.navBar a {
     text-decoration: none;
 }
 
-ul.navBar a.active {
+nav a.active {
     background-color: #016f91;
 }
 
-ul.navBar a:hover {
+nav a:hover {
     background-color: #001319;
     color: #f37020;
 }
