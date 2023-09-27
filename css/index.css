@@ -28,9 +28,8 @@
 }
 
 .loginform {
-text-align: center;
-
+    text-align: center;
+}
+.loginform > textarea{
     resize: none;
-
-
 }
