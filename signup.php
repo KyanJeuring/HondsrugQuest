@@ -26,18 +26,21 @@
         </nav>
     <h1 id="pageTitle">Account aanmaken</h1>
     <hr>
-    <form class="loginform" action="signup.html">
+    <form class="loginform" method="post" action="signup.php">
         <h2 id="subTitle">Gebruikersnaam:</h2>
-           <Textarea maxlength ="16"></Textarea>
-         <br>
-         <h2 id="subTitle">Wachtwoord:</h2>
-         <input type="password" maxlength ="16"></Textarea>
-         <br>
-         <h2 id="subTitle">Wachtwoord herhalen:</h2>
-         <input type="password" maxlength ="16"></Textarea>
-         <br>
-         <input type="submit" value="Meld aan">
-        </form>
-        <h3 id="SubTitle2"> Al een account? Klik <a href="./login.html">hier</a>.</h3> 
+        <input type="text" name="uName" id="uName" maxlength ="16">
+        <br>
+        <h2 id="subTitle">Wachtwoord:</h2>
+        <input type="password" name="pWord" id="pWord" maxlength ="16">
+        <br>
+        <h2 id="subTitle">Wachtwoord herhalen:</h2>
+        <input type="password" maxlength ="16">
+        <br>
+        <input type="submit" value="Meld aan">
+    </form>
+    <h3 id="SubTitle2"> Al een account? Klik <a href="./login.html">hier</a>.</h3> 
+    <?php
+    echo $_post["uName"];
+    ?>
     </body>
 </html>
