@@ -20,7 +20,7 @@
         </ul>
         <ul id="navBarRight">
             <li><a class="active" href="./signup.html">Sign up</a></li>
-            <li><a href="./login.html">Login</a></li>
+            <li><a href="./inlog.php">Login</a></li>
             
         </ul>
         </nav>
