@@ -30,6 +30,3 @@
 .loginform {
     text-align: center;
 }
-.loginform > textarea{
-    resize: none;
-}
