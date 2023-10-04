@@ -13,6 +13,7 @@
     <nav>
         <ul id="navBarLeft">
             <li><a href="./index.html">Home</a></li>
+            <li><a href="./Quests.php"></a>Quests</li>
             <li><a href="./leaderboard.html">Leaderboard</a></li>
         </ul>
         <ul id="navBarRight">
