@@ -23,7 +23,7 @@
     </nav>
     <h1 id="pageTitle">Account aanmaken</h1>
     <hr>
-    <form class="signupform" method="post" action="signup.php">
+    <form class="loginform" method="post" action="signup.php">
         <h2 id="subTitle">Gebruikersnaam:</h2>
         <input type="text" name="uName" id="uName">
         <br>
