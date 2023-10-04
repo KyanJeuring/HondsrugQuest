@@ -24,13 +24,13 @@
     <hr>
     <form class="loginform" action="inlog.php" method="post">
         <h2 id="subTitle">Gebruikersnaam:</h2>
-        <input type="text" name="uName" id="uName">
+        <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
         <br>
         <h2 id="subTitle">E-mail:</h2>
-        <input type="email" name="Email" id="Email">
+        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
         <br>
         <h2 id="subTitle">Wachtwoord:</h2>
-        <input type="password" name="pWord" id="pWord">
+        <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
         <br>
         <input type="submit" value="Inloggen">
     </form>

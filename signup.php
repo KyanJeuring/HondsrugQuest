@@ -25,18 +25,18 @@
     <hr>
     <form class="loginform" method="post" action="signup.php">
         <h2 id="subTitle">Gebruikersnaam:</h2>
-        <input type="text" name="uName" id="uName">
+        <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
         <br>
         <h2 id="subTitle">E-mail:</h2>
-        <input type="email" name="Email" id="Email">
+        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
         <br>
         <h2 id="subTitle">Wachtwoord:</h2>
-        <input type="password" name="pWord" id="pWord">
+        <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
         <br>
         <h2 id="subTitle">Wachtwoord herhalen:</h2>
-        <input type="password">
+        <input placeholder="Herhaal uw wachtwoord..." type="password" id=pWord2>
         <br>
-        <input type="submit" value="Meld aan">
+        <input type="submit" value="Meld aan" id="submit">
     </form>
     <h3 id="SubTitle2"> Al een account? Klik <a href="./login.html">hier</a>.</h3>
     <?php
