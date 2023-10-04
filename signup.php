@@ -7,11 +7,6 @@
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-    <style>
-    textarea {
-        resize: none;
-    }
-    </style>
 </head>
 
 <body>
@@ -28,7 +23,7 @@
     </nav>
     <h1 id="pageTitle">Account aanmaken</h1>
     <hr>
-    <form class="loginform" method="post" action="signup.php">
+    <form class="signupform" method="post" action="signup.php">
         <h2 id="subTitle">Gebruikersnaam:</h2>
         <input type="text" name="uName" id="uName">
         <br>
@@ -39,7 +34,7 @@
         <input type="password" name="pWord" id="pWord">
         <br>
         <h2 id="subTitle">Wachtwoord herhalen:</h2>
-        <input type="password" maxlength="16">
+        <input type="password">
         <br>
         <input type="submit" value="Meld aan">
     </form>

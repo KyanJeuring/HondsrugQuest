@@ -7,7 +7,6 @@
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-
 </head>
 
 <body>
@@ -23,20 +22,18 @@
     </nav>
     <h1 id="pageTitle">Login</h1>
     <hr>
-    <center>
-        <form class="loginform" action="inlog.php" method="post">
-            <h2 id="subTitle">Gebruikersnaam:</h2>
-            <input type="text" name="uName" id="uName">
-            <br>
-            <h2 id="subTitle">E-mail:</h2>
-            <input type="email" name="Email" id="Email">
-            <br>
-            <h2 id="subTitle">Wachtwoord:</h2>
-            <input type="password" name="pWord" id="pWord">
-            <br>
-            <input type="submit" value="Inloggen">
-        </form>
-    </center>
+    <form class="loginform" action="inlog.php" method="post">
+        <h2 id="subTitle">Gebruikersnaam:</h2>
+        <input type="text" name="uName" id="uName">
+        <br>
+        <h2 id="subTitle">E-mail:</h2>
+        <input type="email" name="Email" id="Email">
+        <br>
+        <h2 id="subTitle">Wachtwoord:</h2>
+        <input type="password" name="pWord" id="pWord">
+        <br>
+        <input type="submit" value="Inloggen">
+    </form>
     <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.html">hier</a>.</h3>
     <?php
   $servername = "127.0.0.1";

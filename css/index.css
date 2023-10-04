@@ -10,6 +10,7 @@
     padding-bottom: 2%;
     text-align: center;
 }
+
 #subTitle {
     font-family: MyriadPro-BoldCond, sans-serif;
     font-size: 150%;
@@ -24,9 +25,10 @@
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
-    
+
 }
 
-.loginform {
+form {
+    margin: 0 auto;
     text-align: center;
 }
