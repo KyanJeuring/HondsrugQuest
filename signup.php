@@ -57,7 +57,7 @@ $inputemail = $_POST['Email'];
 $conn = new mysqli($servername, $username, $password, $databasename);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if ($inputpassword == $inputpassword2){
+    if ($inputpassword == $inputpassword2) {
     echo "Wachtwoorden komen overeen.";
     }
     else {
