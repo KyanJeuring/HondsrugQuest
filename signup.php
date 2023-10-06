@@ -35,12 +35,58 @@
         <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
         <br>
         <h2 id="subTitle">Wachtwoord herhalen:</h2>
-        <input placeholder="Herhaal uw wachtwoord..." type="password" id=pWord2>
+        <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
         <br>
         <input type="submit" value="Meld aan" id="submit">
     </form>
     <h3 id="SubTitle2"> Al een account? Klik <a href="./login.html">hier</a>.</h3>
     <?php
+$servername = "127.0.0.1";
+$username = "hondsrug_hondsrugquest";
+$password = "hondsrugquest";
+$databasename = "hondsrug_hondsrugquest";
+
+$inputusername = $_POST['uName'];
+$inputpassword = $_POST['pWord'];
+$inputpassword2 = $_POST['pWord2'];
+$inputemail = $_POST['Email'];
+
+
+
+// Connectie aanmaken
+$conn = new mysqli($servername, $username, $password, $databasename);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if ($inputpassword == $inputpassword2){
+    echo "Wachtwoorden komen overeen.";
+    }
+    else {
+        echo "Wachtwoorden komen niet overeen.";
+        die();
+    }
+    }
+// Connectie checken
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+$sql = "INSERT INTO Inloggegevens (uName, pWord, Email)
+        VALUES (?,?,?)";
+try {
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("sss", $inputusername, $inputpassword, $inputemail);
+} catch (exception $ex) {
+  var_dump($ex);
+}
+
+if ($stmt->execute() === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
 
     ?>
 </body>
