@@ -37,6 +37,66 @@
   </form>
   <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.html">hier</a>.</h3>
   <?php
+    $servername = "127.0.0.1";
+    $username = "hondsrug_hondsrugquest";
+    $password = "hondsrugquest";
+    $databasename = "hondsrug_hondsrugquest";
+
+      // Connectie aanmaken
+  $conn = new mysqli($servername, $username, $password, $databasename);
+
+    // Connectie checken
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+
+    if (isset($_POST['uName']) && isset($_POST['Email']) && isset($_POST['pWord'])) {
+      // Validatie proces
+      function validate($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+      $uName = validate($_POST['uName']);
+      $pWord = validate($_POST['pWord']);
+      $Email = validate($_POST['Email']);
+
+      $err =[];
+      // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
+      if (empty($uName)) {
+        $err[] = "Gebruikersnaam is vereist!" ;
+      } 
+      if (empty($Email)) {
+        $err[] = "Email is vereist!";
+      } 
+      if (empty($pWord)) {
+        $err[] = "Wachtwoord is vereist!";
+      } 
+      // Checken als er geen errors zijn
+      if(count($err) == 0){
+        // Checken als de gegevens overeenkomen
+        $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND Email='$Email' AND pWord='$pWord'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) === 1) {
+          $row = mysqli_fetch_assoc($result);
+          // Sessie aanmaken voor de gebruiker
+          if ($row['uName'] === $uName && $row['Email'] === $Email && $row['pWord'] === $pWord) {
+            $_SESSION['uName'] = $row['uName'];
+            $_SESSION['Email'] = $row['Email'];
+            $_SESSION['id'] = $row['id'];
+            header("Location: index.php");
+          } else {
+            echo "Gegevens kloppen niet!";
+          }
+        }
+      }else{
+        print_r($err);
+      }
+    } else {
+      exit();
+    }
   ?>
 </body>
 
