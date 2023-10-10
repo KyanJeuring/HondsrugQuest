@@ -27,7 +27,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         </ul>
     </nav>
     <h1 id="pageTitle">Hondsrug Quest</h1>
-    <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?> Uw id: <?php echo $_SESSION['id']; ?></h2>
+    <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>. Uw id: <?php echo $_SESSION['id']; ?></h2>
     <hr>
 </body>
 
