@@ -82,12 +82,12 @@
 
     // Connectie checken
     if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+      die("Connectie gefaald: " . $conn->connect_error);
     }
-    echo "connectie succesvol.";
+    echo "Connectie succesvol.";
     $sql = mysqli_query($conn, "SELECT * from Inloggegevens WHERE uName ='$uName'");
     if (mysqli_num_rows($sql) > 0) {
-      echo "Gebruikersnaam is al in gebruik!";
+      echo "Gebruikersnaam is al in gebruik.";
       exit();
     } else {
       $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)

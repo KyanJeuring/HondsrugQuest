@@ -75,23 +75,30 @@
     if (empty($pWord)) {
       $error[] = "Wachtwoord is vereist!";
     }
+
+    
     // Checken als er geen errors zijn
     if (count($error) == 0) {
+    
       // Checken als de gegevens overeenkomen
       $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND Email='$Email' AND pWord='$pWord'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
-        // Sessie aanmaken voor de gebruiker
-        if ($row['uName'] === $uName && $row['Email'] === $Email && $row['pWord'] === $pWord) {
-          $_SESSION['uName'] = $row['uName'];
-          $_SESSION['Email'] = $row['Email'];
-          $_SESSION['id'] = $row['id'];
-          header("Location: index.php");
+        if ($row['uName'] === 'Admin' && $row['Email'] === 'admin@hondsrugquest.nl' && $row['pWord'] === 'AdminHondsrugQuest!') {
+          header("location: adminfile.php");
         } else {
-          echo "Gegevens kloppen niet!";
+          // Sessie aanmaken voor de gebruiker
+          if ($row['uName'] == $uName && $row['Email'] == $Email && $row['pWord'] == $pWord) {
+            $_SESSION['uName'] = $row['uName'];
+            $_SESSION['Email'] = $row['Email'];
+            $_SESSION['id'] = $row['id'];
+            header("Location: index.php");
+          } else {
+            echo "Gegevens kloppen niet!";
+          }
         }
-      }
+     }
     } else {
       print_r($error);
     }
