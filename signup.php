@@ -46,59 +46,62 @@
   $password = "hondsrugquest";
   $databasename = "hondsrug_hondsrugquest";
 
-  $uName = $_POST['uName'];
-  $pWord = $_POST['pWord'];
-  $pWord2 = $_POST['pWord2'];
-  $Email = $_POST['Email'];
+  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $uName = $_POST['uName'];
+    $pWord = $_POST['pWord'];
+    $pWord2 = $_POST['pWord2'];
+    $Email = $_POST['Email'];
+
+    // Connectie aanmaken
+    $conn = new mysqli($servername, $username, $password, $databasename);
+    if (empty($uName)) {
+      echo "Gebruikersnaam is vereist!";
+      exit();
+    } elseif (empty($Email)) {
+      echo "Email is vereist!";
+      exit();
+    } elseif (empty($pWord)) {
+      echo "Wachtwoord is vereist!";
+      exit();
+    } elseif (empty($pWord2)) {
+      echo "Wachtwoord herhalen is vereist!";
+      exit();
+    }elseif($pWord != $pWord2) {
+      echo "Wachtwoorden zijnniet gelijk";
+      exit();
+    }
 
 
-
-  // Connectie aanmaken
-  $conn = new mysqli($servername, $username, $password, $databasename);
-  if (empty($uName)) {
-    echo "Gebruikersnaam is vereist!";
-    exit();
-  } elseif (empty($Email)) {
-    echo "Email is vereist!";
-    exit();
-  } elseif (empty($pWord)) {
-    echo "Wachtwoord is vereist!";
-    exit();
-  } elseif (empty($pWord2)) {
-    echo "Wachtwoord herhalen is vereist!";
-    exit();
-  } else {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      if ($pWord == $pWord2) {
-        header("Location: inlog.php");
-      } else {
-        echo "Wachtwoorden komen niet overeen.";
-        exit();
+  
+  
+    // Connectie checken
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    echo "connectie succesvol.";
+    $sql = mysqli_query($conn, "SELECT * from Inloggegevens WHERE uName ='$uName'");
+    if (mysqli_num_rows($sql) > 0) {
+      echo "Username is al in gebruik";
+      exit();
+    } else {
+      $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)
+            VALUES (?,?,?)";
+      try {
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $uName, $pWord, $Email);
+      } catch (exception $ex) {
+        var_dump($ex);
       }
+
+      if ($stmt->execute() === TRUE) {
+        echo "Nieuw account succesvol aangemaakt.";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+
+      $conn->close();
     }
   }
-  // Connectie checken
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  echo "Connected successfully";
-
-  $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)
-        VALUES (?,?,?)";
-  try {
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $uName, $pWord, $Email);
-  } catch (exception $ex) {
-    var_dump($ex);
-  }
-
-  if ($stmt->execute() === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-
-  $conn->close();
 
   ?>
 </body>
