@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="nl">
 
 <head>
@@ -12,9 +13,9 @@
 <body>
   <nav>
     <ul id="navBarLeft">
-      <li><a href="./index.html">Home</a></li>
+      <li><a href="./index.php">Home</a></li>
       <li><a href="./Quests.php">Quests</a></li>
-      <li><a href="./leaderboard.html">Leaderboard</a></li>
+      <li><a href="./leaderboard.php">Leaderboard</a></li>
     </ul>
     <ul id="navBarRight">
       <li><a class="active" href="./signup.php">Sign up</a></li>
@@ -39,14 +40,14 @@
     <br>
     <input type="submit" value="Meld aan" id="submit">
   </form>
-  <h3 id="SubTitle2"> Al een account? Klik <a href="./login.html">hier</a>.</h3>
+  <h3 id="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
   <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
   $password = "hondsrugquest";
   $databasename = "hondsrug_hondsrugquest";
 
-  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $uName = $_POST['uName'];
     $pWord = $_POST['pWord'];
     $pWord2 = $_POST['pWord2'];
@@ -54,26 +55,33 @@
 
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
+
+    // Error array aanmaken
+    $error = [];
+    // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
     if (empty($uName)) {
-      echo "Gebruikersnaam is vereist!";
-      exit();
-    } elseif (empty($Email)) {
-      echo "Email is vereist!";
-      exit();
-    } elseif (empty($pWord)) {
-      echo "Wachtwoord is vereist!";
-      exit();
-    } elseif (empty($pWord2)) {
-      echo "Wachtwoord herhalen is vereist!";
-      exit();
-    }elseif($pWord != $pWord2) {
-      echo "Wachtwoorden zijnniet gelijk";
-      exit();
+      $error[] = "Gebruikersnaam is vereist!";
+    }
+    if (empty($Email)) {
+      $error[] = "Email is vereist!";
+    }
+    if (empty($pWord)) {
+      $error[] = "Wachtwoord is vereist!";
+    }
+    if (empty($pWord2)) {
+      $error[] = "Wachtwoord herhalen is vereist!";
+    }
+    // Checken als er geen errors zijn
+    if (count($error) == 0) {
+      if ($pWord != $pWord2) {
+        echo "Wachtwoorden zijn niet gelijk!";
+      } else {
+        header("Location: inlog.php");
+      }
+    } else {
+      print_r($error);
     }
 
-
-  
-  
     // Connectie checken
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -81,7 +89,7 @@
     echo "connectie succesvol.";
     $sql = mysqli_query($conn, "SELECT * from Inloggegevens WHERE uName ='$uName'");
     if (mysqli_num_rows($sql) > 0) {
-      echo "Username is al in gebruik";
+      echo "Gebruikersnaam is al in gebruik!";
       exit();
     } else {
       $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)

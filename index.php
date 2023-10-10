@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quests</title>
+    <title>Hondsrug Quest</title>
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/navBar.css" />
@@ -16,8 +16,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 <body>
     <nav>
         <ul id="navBarLeft">
-            <li><a href="./index.php">Home</a></li>
-            <li><a class="active" href="./Quests.php">Quests</a></li>
+            <li><a class="active" href="./index.php">Home</a></li>
+            <li><a href="./Quests.php">Quests</a></li>
             <li><a href="./leaderboard.php">Leaderboard</a></li>
         </ul>
         <ul id="navBarRight">
@@ -26,7 +26,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             <li><a href="./logout.php">Uitloggen</a></li>
         </ul>
     </nav>
-    <h1 id="pageTitle">Quests</h1>
+    <h1 id="pageTitle">Hondsrug Quest</h1>
+    <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?> Uw id: <?php echo $_SESSION['id']; ?></h2>
     <hr>
 </body>
 
