@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
+?>
 <html lang="nl">
     <head>
         <meta charset="utf-8" />
@@ -23,3 +27,9 @@
         <hr>
     </body>
 </html>
+<?php
+} else {
+    header("Location: inlog.php");
+    exit();
+}
+?>
