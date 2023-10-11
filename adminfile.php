@@ -25,7 +25,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             </ul>
         </nav>
         <h1 id="pageTitle">Admin Page</h1>
-        <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.;</h2>
+        <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.</h2>
         <hr>
     </body>
 
