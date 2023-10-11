@@ -2,37 +2,37 @@
 <html lang="nl">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Login</title>
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Login</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" type="text/css" href="css/navBar.css" />
 </head>
 
 <body>
-    <nav>
-        <ul id="navBarRight">
-            <li><a href="./signup.php">Sign up</a></li>
-            <li><a class="active" href="./inlog.php">Login</a></li>
-        </ul>
-    </nav>
-    <h1 id="pageTitle">Login</h1>
-    <hr>
-    <form class="loginform" action="inlog.php" method="post">
-        <h2 id="subTitle">Gebruikersnaam:</h2>
-        <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
-        <br>
-        <h2 id="subTitle">E-mail:</h2>
-        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-        <br>
-        <h2 id="subTitle">Wachtwoord:</h2>
-        <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
-        <br>
-        <input type="submit" value="Inloggen">
-    </form>
-    <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
-    <?php
+  <nav>
+    <ul id="navBarRight">
+      <li><a href="./signup.php">Sign up</a></li>
+      <li><a class="active" href="./inlog.php">Login</a></li>
+    </ul>
+  </nav>
+  <h1 id="pageTitle">Login</h1>
+  <hr>
+  <form class="loginform" action="inlog.php" method="post">
+    <h2 id="subTitle">Gebruikersnaam:</h2>
+    <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
+    <br>
+    <h2 id="subTitle">E-mail:</h2>
+    <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+    <br>
+    <h2 id="subTitle">Wachtwoord:</h2>
+    <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
+    <br>
+    <input type="submit" value="Inloggen">
+  </form>
+  <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
+  <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
   $password = "hondsrugquest";
@@ -73,16 +73,19 @@
       $error[] = "Wachtwoord is vereist!";
     }
 
-    
+
     // Checken als er geen errors zijn
     if (count($error) == 0) {
-    
+
       // Checken als de gegevens overeenkomen
       $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND Email='$Email' AND pWord='$pWord'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         if ($row['uName'] === 'Admin' && $row['Email'] === 'admin@hondsrugquest.nl' && $row['pWord'] === 'AdminHondsrugQuest!') {
+          $_SESSION['uName'] = $row['uName'];
+          $_SESSION['Email'] = $row['Email'];
+          $_SESSION['id'] = $row['id'];
           header("location: adminfile.php");
         } else {
           // Sessie aanmaken voor de gebruiker
@@ -95,7 +98,7 @@
             echo "Gegevens kloppen niet!";
           }
         }
-     }
+      }
     } else {
       print_r($error);
     }
