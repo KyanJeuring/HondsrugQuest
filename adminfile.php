@@ -21,8 +21,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
                 <li><a href="./leaderboard.php">Leaderboard</a></li>
             </ul>
             <ul id="navBarRight">
-                <li><a href="./signup.php">Sign up</a></li>
-                <li><a href="./inlog.php">Login</a></li>
                 <li><a href="./logout.php">Uitloggen</a></li>
             </ul>
         </nav>

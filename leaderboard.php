@@ -16,8 +16,6 @@
                 <li><a class="active" href="./leaderboard.php">Leaderboard</a></li>
             </ul>
             <ul id="navBarRight">
-                <li><a href="./signup.php">Sign up</a></li>
-                <li><a href="./inlog.php">Login</a></li>
                 <li><a href="./logout.php">Uitloggen</a></li>
             </ul>
         </nav>

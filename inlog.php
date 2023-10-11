@@ -12,9 +12,6 @@
 
 <body>
     <nav>
-        <ul id="navBarLeft">
-            <li><a href="./leaderboard.php">Leaderboard</a></li>
-        </ul>
         <ul id="navBarRight">
             <li><a href="./signup.php">Sign up</a></li>
             <li><a class="active" href="./inlog.php">Login</a></li>
