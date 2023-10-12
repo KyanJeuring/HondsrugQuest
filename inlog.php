@@ -28,8 +28,10 @@
     <br>
     <h2 id="subTitle">Wachtwoord:</h2>
     <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
-    <br>
+    <br><br>
     <input type="submit" value="Inloggen">
+    <br><br>
+    <button><a href="./mail.php">Wachtwoord vergeten?</a></button>
   </form>
   <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
   <?php
