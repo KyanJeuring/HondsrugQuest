@@ -30,6 +30,35 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 
 </html>
 <?php
+
+
+$servername = "127.0.0.1";
+$username = "hondsrug_hondsrugquest";
+$password = "hondsrugquest";
+$databasename = "hondsrug_hondsrugquest";
+
+// Connectie aanmaken
+$conn = new mysqli($servername, $username, $password, $databasename);
+
+// Connectie checken
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+$sql = "SELECT * FROM Quest";
+$result = $conn->query($sql);
+
+if ($result > 0) {
+    //quests laten zien
+    while($row = $result->fetch_assoc()) {
+        echo "<center>" . "<br>" . "titel: " . $row["titel"] . "," . "&nbsp;" . "Beschrijving: " . $row["beschrijving"] . "," . "&nbsp;" . "punten: " . $row["punten"] . "</center>" ;
+    }
+} else {
+    echo "geen quests beschikbaar.";
+}
+$conn->close();
+
 } else {
     header("Location: inlog.php");
     exit();

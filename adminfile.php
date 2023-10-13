@@ -24,7 +24,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.</h2>
     <hr>
 
-    <form method="post" action="Quests.php">
+    <form method="post" >
         <h2 id="subTitle">titel</h2>
         <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">
         <br>
@@ -32,7 +32,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         <input placeholder="voer een beschrijving in..." type="text" name="beschrijving" id="beschrijving">
         <br>
         <h2 id="subTitle">punten</h2>
-        <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
+        <input type="number" min="0" max="5" name="punten" id="punten">
         <br>
         <input type="submit" value="Meld aan" id="submit">
     </form>
@@ -57,10 +57,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
       $error[] = "Titel is vereist!";
     }
     if (empty($beschrijving)) {
-      $error[] = "Email is vereist!";
+      $error[] = "Beschrijving is vereist!";
     }
     if (empty($punten)) {
-      $error[] = "Wachtwoord is vereist!";
+        $error[] = "punten is vereist!";
     }
     // Checken als er geen errors zijn
     if (count($error) != 0) {
@@ -79,7 +79,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         echo "titel bestaat al";
         exit();
       } else {
-        $sql = "INSERT INTO Quests (titel, beschrijving, punten)
+        $sql = "INSERT INTO Quest (titel, beschrijving, punten)
               VALUES (?,?,?)";
         try {
           $stmt = $conn->prepare($sql);
@@ -89,7 +89,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         }
 
         if ($stmt->execute() === TRUE) {
-          echo "Nieuw account succesvol aangemaakt.";
+          echo "Nieuwe quest succesvol aangemaakt.";
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
