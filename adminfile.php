@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL);
 if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
 ?>
 <html>
@@ -52,58 +53,52 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     // Error array aanmaken
     $error = [];
     // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
-    if (empty($uName)) {
-      $error[] = "Gebruikersnaam is vereist!";
+    if (empty($titel)) {
+      $error[] = "Titel is vereist!";
     }
-    if (empty($Email)) {
+    if (empty($beschrijving)) {
       $error[] = "Email is vereist!";
     }
-    if (empty($pWord)) {
+    if (empty($punten)) {
       $error[] = "Wachtwoord is vereist!";
     }
-    if (empty($pWord2)) {
-      $error[] = "Wachtwoord herhalen is vereist!";
-    }
     // Checken als er geen errors zijn
-    if (count($error) == 0) {
-      if ($pWord != $pWord2) {
-        echo "Wachtwoorden zijn niet gelijk!";
-      } else {
-        header("Location: inlog.php");
-      }
-    } else {
+    if (count($error) != 0) {
       print_r($error);
-    }
-
-    // Connectie checken
-    if ($conn->connect_error) {
-      die("Connectie gefaald: " . $conn->connect_error);
-    }
-    echo "Connectie succesvol.";
-    $sql = mysqli_query($conn, "SELECT * from Inloggegevens WHERE uName ='$uName'");
-    if (mysqli_num_rows($sql) > 0) {
-      echo "Gebruikersnaam is al in gebruik.";
-      exit();
     } else {
-      $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)
-            VALUES (?,?,?)";
-      try {
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $uName, $pWord, $Email);
-      } catch (exception $ex) {
-        echo "Oeps, er is iets foutgegaan.";
-      }
+      
+    
 
-      if ($stmt->execute() === TRUE) {
-        echo "Nieuw account succesvol aangemaakt.";
+      // Connectie checken
+      if ($conn->connect_error) {
+        die("Connectie gefaald: " . $conn->connect_error);
+      }
+      echo "Connectie succesvol.";
+      $sql = mysqli_query($conn, "SELECT * from Quest WHERE titel ='$titel'");
+      if (mysqli_num_rows($sql) > 0) {
+        echo "titel bestaat al";
+        exit();
       } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-      }
+        $sql = "INSERT INTO Quests (titel, beschrijving, punten)
+              VALUES (?,?,?)";
+        try {
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("sss", $titel, $beschrijving, $punten);
+        } catch (exception $ex) {
+          echo "Oeps, er is iets foutgegaan.";
+        }
 
-      $conn->close();
+        if ($stmt->execute() === TRUE) {
+          echo "Nieuw account succesvol aangemaakt.";
+        } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        $conn->close();
+      }
     }
   }
-
+}
   ?>
 </body>
 
