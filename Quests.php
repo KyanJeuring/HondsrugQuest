@@ -2,63 +2,62 @@
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
 ?>
-<html lang="nl">
+    <html lang="nl">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quests</title>
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quests</title>
+        <link rel="icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    </head>
 
-<body>
-    <nav>
-        <ul id="navBarLeft">
-            <li><a href="./index.php">Home</a></li>
-            <li><a class="active" href="./Quests.php">Quests</a></li>
-            <li><a href="./leaderboard.php">Leaderboard</a></li>
-        </ul>
-        <ul id="navBarRight">
-            <li><a href="./logout.php">Uitloggen</a></li>
-        </ul>
-    </nav>
-    <h1 id="pageTitle">Quests</h1>
-    <hr>
-</body>
+    <body>
+        <nav>
+            <ul id="navBarLeft">
+                <li><a href="./index.php">Home</a></li>
+                <li><a class="active" href="./Quests.php">Quests</a></li>
+                <li><a href="./leaderboard.php">Leaderboard</a></li>
+            </ul>
+            <ul id="navBarRight">
+                <li><a href="./logout.php">Uitloggen</a></li>
+            </ul>
+        </nav>
+        <h1 id="pageTitle">Quests</h1>
+        <hr>
+    </body>
 
-</html>
+    </html>
 <?php
 
 
-$servername = "127.0.0.1";
-$username = "hondsrug_hondsrugquest";
-$password = "hondsrugquest";
-$databasename = "hondsrug_hondsrugquest";
+    $servername = "127.0.0.1";
+    $username = "hondsrug_hondsrugquest";
+    $password = "hondsrugquest";
+    $databasename = "hondsrug_hondsrugquest";
 
-// Connectie aanmaken
-$conn = new mysqli($servername, $username, $password, $databasename);
+    // Connectie aanmaken
+    $conn = new mysqli($servername, $username, $password, $databasename);
 
-// Connectie checken
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-$sql = "SELECT * FROM Quest";
-$result = $conn->query($sql);
-
-if ($result > 0) {
-    //quests laten zien
-    while($row = $result->fetch_assoc()) {
-        echo "<center>" . "<br>" . "titel: " . $row["titel"] . "," . "&nbsp;" . "Beschrijving: " . $row["beschrijving"] . "," . "&nbsp;" . "punten: " . $row["punten"] . "</center>" ;
+    // Connectie checken
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-} else {
-    echo "geen quests beschikbaar.";
-}
-$conn->close();
+    echo "Connected successfully";
 
+    $sql = "SELECT * FROM Quest";
+    $result = $conn->query($sql);
+
+    if ($result > 0) {
+        //quests laten zien
+        while ($row = $result->fetch_assoc()) {
+            echo "<center>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Beschrijving: " . $row["beschrijving"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "</center>";
+        }
+    } else {
+        echo "Geen quests beschikbaar.";
+    }
+    $conn->close();
 } else {
     header("Location: inlog.php");
     exit();

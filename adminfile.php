@@ -23,17 +23,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     <h1 id="pageTitle">Admin Page</h1>
     <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.</h2>
     <hr>
-
-    <form method="post" >
-        <h2 id="subTitle">titel</h2>
+    <h2 id="subTitle">Quest aanmaken:</h2>
+    <form method="post">
+        <h2 id="subTitle">Titel:</h2>
         <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">
         <br>
-        <h2 id="subTitle">beschrijving</h2>
+        <h2 id="subTitle">Beschrijving:</h2>
         <input placeholder="voer een beschrijving in..." type="text" name="beschrijving" id="beschrijving">
         <br>
-        <h2 id="subTitle">punten</h2>
+        <h2 id="subTitle">Punten:</h2>
         <input type="number" min="0" max="5" name="punten" id="punten">
-        <br>
+        <br><br>
         <input type="submit" value="Meld aan" id="submit">
     </form>
     <?php
@@ -60,14 +60,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
       $error[] = "Beschrijving is vereist!";
     }
     if (empty($punten)) {
-        $error[] = "punten is vereist!";
+      $error[] = "Punten zijn vereist!";
     }
     // Checken als er geen errors zijn
     if (count($error) != 0) {
       print_r($error);
     } else {
-      
-    
+
+
 
       // Connectie checken
       if ($conn->connect_error) {
