@@ -96,10 +96,10 @@
             $_SESSION['Email'] = $row['Email'];
             $_SESSION['id'] = $row['id'];
             header("Location: index.php");
-          } else {
-            echo "Gegevens kloppen niet!";
           }
         }
+      } else {
+        echo "Gegevens kloppen niet!";
       }
     } else {
       print_r($error);
