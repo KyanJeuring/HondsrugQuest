@@ -52,7 +52,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     if ($result > 0) {
         //quests laten zien
         while ($row = $result->fetch_assoc()) {
-            echo "<center>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Beschrijving: " . $row["beschrijving"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "</center>";
+            echo "<center>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Beschrijving: " . $row["beschrijving"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "<a href='./questdetails.php?id=" .$row['id']."'> details bekijken  </a> </button>" . "</center>";
         }
     } else {
         echo "Geen quests beschikbaar.";
