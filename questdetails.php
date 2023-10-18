@@ -15,7 +15,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             die("Connection failed: " . $conn->connect_error);
         }
     
-
 ?>
 
 <html lang="nl">
@@ -44,13 +43,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         
 
         <hr>
-    </body>
-
-</html>
+ 
 <?php
-
+$sql = "SELECT * FROM `Quest` WHERE `id` = ?";
+try {
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("s", $_GET['id']);
+  $stmt->execute();
+  $result = $stmt->get_result();
+} catch(exception $ex)
+{
+    var_dump($ex);
+}
+if (true) {
+    //quests laten zien
+    while ($row = $result->fetch_assoc()) {
+        echo "<center>" . "<h1> Titel: " . $row["titel"] . "</h1>" . "." . "<br>" . "<h2> beschrijving:" . $row["beschrijving"] . "</h1>" . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "</center>";
+    }
+} else {
+    echo "Geen quests beschikbaar.";
+}
+$conn->close();
 } else {
     header("Location: inlog.php");
     exit();
 }
 ?>
+   </body>
+
+</html>
