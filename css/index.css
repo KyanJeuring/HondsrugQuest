@@ -5,7 +5,7 @@
 }
 
 div {
-    border: 5px solid #016f91;
+    border: 5px solid #00b0c4;
     border-radius: 25px;
     width: 50%;
     margin: auto;
@@ -22,17 +22,16 @@ button {
     margin-right: 25%;
     padding: 5px;
     width: 50%;
-    background-color: #0182aa;
+    background-color: #00b0c4;
     color: white;
     font-family: UniSans, Verdana, Arial, sans-serif;
-    border: 5px solid #016f91;
+    border: #00b0c4;
     border-radius: 25px;
 }
 
 button:hover {
-    background-color: #001319;
-    color: #f37020;
-    border: 5px solid #000;
+    background-color: #ff7d00;
+    border: #ff7d00;
 }
 
 .pageTitle {
