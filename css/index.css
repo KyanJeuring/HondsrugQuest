@@ -6,8 +6,8 @@
 
 div {
     border: 5px solid #00b0c4;
-    border-radius: 25px;
-    width: 50%;
+    border-radius: 20px;
+    width: 75%;
     margin: auto;
     padding: 2%;
 }
@@ -26,7 +26,7 @@ button {
     color: white;
     font-family: UniSans, Verdana, Arial, sans-serif;
     border: 1px solid #ff7d00;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 button:hover {
