@@ -24,7 +24,7 @@ button {
     width: 50%;
     background-color: #0182aa;
     color: white;
-    font-family: MyriadPro-Regular, sans-serif;
+    font-family: UniSans, Verdana, Arial, sans-serif;
     border: 5px solid #016f91;
     border-radius: 25px;
 }
@@ -36,7 +36,7 @@ button:hover {
 }
 
 .pageTitle {
-    font-family: MyriadPro-BoldCond, sans-serif;
+    font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 250%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -45,7 +45,7 @@ button:hover {
 }
 
 .subTitle {
-    font-family: MyriadPro-BoldCond, sans-serif;
+    font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 150%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -54,7 +54,7 @@ button:hover {
 }
 
 .subTitle2 {
-    font-family: MyriadPro-BoldCond, sans-serif;
+    font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 100%;
     padding-top: 2%;
     padding-bottom: 2%;
