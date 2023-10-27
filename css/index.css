@@ -4,7 +4,42 @@
     padding: 0;
 }
 
-#pageTitle {
+div {
+    border: 5px solid #016f91;
+    border-radius: 25px;
+    width: 50%;
+    margin: auto;
+    padding: 2%;
+}
+
+form {
+    text-align: center;
+}
+
+button {
+    margin: 2%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 5px;
+    width: 50%;
+    background-color: #0182aa;
+    color: white;
+    font-family: MyriadPro-Regular, sans-serif;
+    border: 5px solid #016f91;
+    border-radius: 25px;
+}
+
+button a {
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #001319;
+    color: #f37020;
+    border: 5px solid #000;
+}
+
+.pageTitle {
     font-family: MyriadPro-BoldCond, sans-serif;
     font-size: 250%;
     padding-top: 2%;
@@ -12,7 +47,7 @@
     text-align: center;
 }
 
-#subTitle {
+.subTitle {
     font-family: MyriadPro-BoldCond, sans-serif;
     font-size: 150%;
     padding-top: 2%;
@@ -20,20 +55,10 @@
     text-align: center;
 }
 
-#subTitle2 {
+.subTitle2 {
     font-family: MyriadPro-BoldCond, sans-serif;
     font-size: 100%;
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
-
-}
-
-form {
-    margin: 0 auto;
-    text-align: center;
-}
-button a {
-    color: black;
-    text-decoration: none;
 }

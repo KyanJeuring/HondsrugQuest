@@ -3,40 +3,42 @@ session_start();
 error_reporting(E_ALL);
 if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
 ?>
-<html>
+  <html>
 
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hondsrug Quest</title>
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <ul id="navBarRight">
-            <li><a href="./logout.php">Uitloggen</a></li>
-        </ul>
+      <ul id="navBarRight">
+        <li><a href="./logout.php">Uitloggen</a></li>
+      </ul>
     </nav>
     <h1 id="pageTitle">Admin Page</h1>
     <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.</h2>
     <hr>
-    <h2 id="subTitle">Quest aanmaken:</h2>
-    <form method="post">
-        <h2 id="subTitle">Titel:</h2>
+    <h2 class="subTitle">Quest aanmaken:</h2>
+    <div>
+      <form action="adminfile.php" method="post" id="FQuest">
+        <h2 class="subTitle">Titel:</h2>
         <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">
         <br>
-        <h2 id="subTitle">Beschrijving:</h2>
+        <h2 class="subTitle">Beschrijving:</h2>
         <input placeholder="voer een beschrijving in..." type="text" name="beschrijving" id="beschrijving">
         <br>
-        <h2 id="subTitle">Punten:</h2>
+        <h2 class="subTitle">Punten:</h2>
         <input type="number" min="0" max="5" name="punten" id="punten">
         <br><br>
-        <input type="submit" value="Meld aan" id="submit">
-    </form>
-    <?php
+      </form>
+      <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
+    </div>
+  <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
   $password = "hondsrugquest";
@@ -100,6 +102,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
   }
 }
   ?>
-</body>
+  </body>
 
-</html>
+  </html>

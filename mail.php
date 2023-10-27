@@ -15,15 +15,17 @@
             <li><a href="./inlog.php">Terug</a></li>
         </ul>
     </nav>
-    <h1 id="pageTitle"> Wachtwoord vergeten?</h1>
+    <h1 class="pageTitle"> Wachtwoord vergeten?</h1>
     <hr>
-    <h2 id="subTitle">Geen zorgen!</h2>
-    <form action="mail.php" method="post">
-        <h2 id="subTitle">Vul uw E-mail om uw wachtwoord per mail te ontvangen!</h2>
-        <input placeholder="Vul uw Email in..." type="text" name="Email" id="Email" />
-        <input type="submit" value="Verstuur mail" />
-        <br>
-    </form>
+    <h2 class="subTitle">Geen zorgen!</h2>
+    <div>
+        <form action="mail.php" method="post" id="FMail">
+            <h2 class="subTitle">Vul uw E-mail om uw wachtwoord per mail te ontvangen!</h2>
+            <input placeholder="Vul uw Email in..." type="text" name="Email" id="Email" />
+            <br>
+        </form>
+        <button form="FMail" type="submit" class="SubTitle2">Verstuur mail!</button>
+    </div>
 </body>
 
 </html>

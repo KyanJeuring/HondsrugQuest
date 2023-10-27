@@ -24,8 +24,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
                 <li><a href="./logout.php">Uitloggen</a></li>
             </ul>
         </nav>
-        <h1 id="pageTitle">Quests</h1>
+        <h1 class="pageTitle">Quests</h1>
         <hr>
+        <div>
+
+        </div>
     </body>
 
     </html>
@@ -52,7 +55,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     if ($result > 0) {
         //quests laten zien
         while ($row = $result->fetch_assoc()) {
-            echo "<center>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "<a href='./questdetails.php?id=" .$row['id']."'> details bekijken  </a> </button>" . "</center>";
+            echo "<center>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "<a href='./questdetails.php?id=" . $row['id'] . "'> details bekijken  </a> </button>" . "</center>";
         }
     } else {
         echo "Geen quests beschikbaar.";

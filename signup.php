@@ -18,24 +18,26 @@
 
         </ul>
     </nav>
-    <h1 id="pageTitle">Account aanmaken</h1>
+    <h1 class="pageTitle">Account aanmaken</h1>
     <hr>
-    <form class="loginform" method="post" action="signup.php">
-        <h2 id="subTitle">Gebruikersnaam:</h2>
-        <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
-        <br>
-        <h2 id="subTitle">E-mail:</h2>
-        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-        <br>
-        <h2 id="subTitle">Wachtwoord:</h2>
-        <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
-        <br>
-        <h2 id="subTitle">Wachtwoord herhalen:</h2>
-        <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
-        <br><br>
-        <input type="submit" value="Meld aan" id="submit">
-    </form>
-    <h3 id="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
+    <div>
+        <form id="FSignup" method="post" action="signup.php">
+            <h2 class="subTitle">Gebruikersnaam:</h2>
+            <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
+            <br>
+            <h2 class="subTitle">E-mail:</h2>
+            <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+            <br>
+            <h2 class="subTitle">Wachtwoord:</h2>
+            <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
+            <br>
+            <h2 class="subTitle">Wachtwoord herhalen:</h2>
+            <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
+            <br><br>
+        </form>
+        <button form="FSignup" type="submit" class="SubTitle2">Meld Aan!</button>
+        <h3 class="SubTitle2"> Al een account? Klik <a href="./inlog.php">hier</a>.</h3>
+    </div>
     <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";

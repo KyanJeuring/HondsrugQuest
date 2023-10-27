@@ -2,39 +2,40 @@
 <html lang="nl">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Login</title>
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Login</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
 </head>
 
 <body>
-  <nav>
-    <ul id="navBarRight">
-      <li><a href="./signup.php">Sign up</a></li>
-      <li><a class="active" href="./inlog.php">Login</a></li>
-    </ul>
-  </nav>
-  <h1 id="pageTitle">Login</h1>
-  <hr>
-  <form class="loginform" action="inlog.php" method="post">
-    <h2 id="subTitle">Gebruikersnaam:</h2>
-    <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
-    <br>
-    <h2 id="subTitle">E-mail:</h2>
-    <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-    <br>
-    <h2 id="subTitle">Wachtwoord:</h2>
-    <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
-    <br><br>
-    <input type="submit" value="Inloggen">
-    <br><br>
-    <button><a href="./mail.php">Wachtwoord vergeten?</a></button>
-  </form>
-  <h3 id="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
-  <?php
+    <nav>
+        <ul id="navBarRight">
+            <li><a href="./signup.php">Sign up</a></li>
+            <li><a class="active" href="./inlog.php">Login</a></li>
+        </ul>
+    </nav>
+    <h1 class="pageTitle">Login</h1>
+    <hr>
+    <div>
+        <form id="FInlog" action="inlog.php" method="post">
+            <h2 class="subTitle">Gebruikersnaam:</h2>
+            <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
+            <br>
+            <h2 class="subTitle">E-mail:</h2>
+            <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+            <br>
+            <h2 class="subTitle">Wachtwoord:</h2>
+            <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
+            <br><br>
+        </form>
+        <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
+        <button class="SubTitle2"><a href="./mail.php">Wachtwoord vergeten?</a></button>
+        <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
+    </div>
+    <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
   $password = "hondsrugquest";
