@@ -22,16 +22,16 @@ button {
     margin-right: 25%;
     padding: 5px;
     width: 50%;
-    background-color: #00b0c4;
+    background-color: #ff7d00;
     color: white;
     font-family: UniSans, Verdana, Arial, sans-serif;
-    border: #00b0c4;
+    border: 1px solid #ff7d00;
     border-radius: 25px;
 }
 
 button:hover {
-    background-color: #ff7d00;
-    border: #ff7d00;
+    background-color: #00b0c4;
+    border: 1px solid #00b0c4;
 }
 
 .pageTitle {
