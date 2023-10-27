@@ -29,10 +29,6 @@ button {
     border-radius: 25px;
 }
 
-button a {
-    text-decoration: none;
-}
-
 button:hover {
     background-color: #001319;
     color: #f37020;
@@ -45,6 +41,7 @@ button:hover {
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
+    text-decoration: none;
 }
 
 .subTitle {
@@ -53,6 +50,7 @@ button:hover {
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
+    text-decoration: none;
 }
 
 .subTitle2 {
@@ -61,4 +59,5 @@ button:hover {
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
+    text-decoration: none;
 }

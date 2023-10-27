@@ -32,7 +32,9 @@
             <br><br>
         </form>
         <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
-        <button class="SubTitle2"><a href="./mail.php">Wachtwoord vergeten?</a></button>
+        <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"'
+            class="SubTitle2">Mail
+            vergeten?</button>
         <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
     </div>
     <?php
