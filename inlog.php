@@ -36,7 +36,6 @@
             class="SubTitle2">Mail
             vergeten?</button>
         <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
-    </div>
     <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
@@ -50,7 +49,7 @@
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-  echo "Connected successfully";
+ // echo "Connected successfully";
 
   if (isset($_POST['uName']) && isset($_POST['Email']) && isset($_POST['pWord'])) {
     // Validatie proces
@@ -102,7 +101,7 @@
           }
         }
       } else {
-        echo "Gegevens kloppen niet!";
+        echo "<h2 class='subtitle'>" . "gegevens kloppen niet!" . "</h2>";
       }
     } else {
       print_r($error);
@@ -111,6 +110,7 @@
     exit();
   }
   ?>
+  </div>
 </body>
 
 </html>
