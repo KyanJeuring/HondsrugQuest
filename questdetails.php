@@ -38,8 +38,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     </nav>
     <h1 class="pageTitle">Quests details</h1>
     <div>
-        <h2 class="SubTitle2">Quest nummer: <?php echo $_GET['id']; ?> </h2>
-    </div>
+        <h2 class="SubTitle">Quest nummer: <?php echo $_GET['id']; ?> </h2>
+    
 
     <?php
     $sql = "SELECT * FROM `Quest` WHERE `id` = ?";
@@ -54,7 +54,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     if (true) {
         //quests laten zien
         while ($row = $result->fetch_assoc()) {
-            echo "<center>" . "<h1> Titel: " . $row["titel"] . "</h1>" . "." . "<br>" . "<h2> beschrijving:" . $row["beschrijving"] . "</h1>" . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "</center>";
+            echo "<center>" . "<h2 class='Subtitle'> Titel: " . $row["titel"] . "</h2>" . "<br>" . "<h2 class='subtitle'> beschrijving:" . $row["beschrijving"] . "</h2>" . "&nbsp;" . "<h3 class='subtitle'> Punten: " . $row["punten"] . "&nbsp;" . "</h3>" . "</center>";
         }
     } else {
         echo "Geen quests beschikbaar.";
@@ -65,6 +65,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     exit();
 }
     ?>
+    </div>
 </body>
 
 </html>

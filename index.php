@@ -24,8 +24,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
                 <li><a href="./logout.php">Uitloggen</a></li>
             </ul>
         </nav>
-        <h1 class="pageTitle">Hondsrug Quest</h1>
-        <h2 class="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>. Uw id: <?php echo $_SESSION['id']; ?></h2>
+      <center> <img src="HCLogo.png"> </center>
+        <h2 class="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>. </h2>
         <hr>
     </body>
 
