@@ -27,5 +27,8 @@
         <button form="FMail" type="submit" class="SubTitle2">Verstuur mail!</button>
     </div>
 </body>
+<footer>
+    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+</footer>
 
 </html>

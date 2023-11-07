@@ -17,55 +17,58 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 
 ?>
 
-<html lang="nl">
-
-<head>
+    <html lang="nl">
 
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Details van de Quest</title>
-        <link rel="icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-    </head>
 
-<body>
-    <nav>
-        <ul id="navBarRight">
-            <li><a href="./Quests.php">Terug</a></li>
-        </ul>
-    </nav>
-    <h1 class="pageTitle">Quests details</h1>
-    <div>
-        <h2 class="SubTitle">Quest nummer: <?php echo $_GET['id']; ?> </h2>
-    
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Details van de Quest</title>
+            <link rel="icon" href="assets/favicon.ico" />
+            <link rel="stylesheet" type="text/css" href="css/index.css" />
+            <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+        </head>
 
-    <?php
-    $sql = "SELECT * FROM `Quest` WHERE `id` = ?";
-    try {
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $_GET['id']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    } catch (exception $ex) {
-        var_dump($ex);
-    }
-    if (true) {
-        //quests laten zien
-        while ($row = $result->fetch_assoc()) {
-            echo "<center>" . "<h2 class='Subtitle'> Titel: " . $row["titel"] . "</h2>" . "<br>" . "<h2 class='subtitle'> beschrijving:" . $row["beschrijving"] . "</h2>" . "&nbsp;" . "<h3 class='subtitle'> Punten: " . $row["punten"] . "&nbsp;" . "</h3>" . "</center>";
+    <body>
+        <nav>
+            <ul id="navBarRight">
+                <li><a href="./Quests.php">Terug</a></li>
+            </ul>
+        </nav>
+        <h1 class="pageTitle">Quests details</h1>
+        <div>
+            <h2 class="SubTitle">Quest nummer: <?php echo $_GET['id']; ?> </h2>
+
+
+        <?php
+        $sql = "SELECT * FROM `Quest` WHERE `id` = ?";
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $_GET['id']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        } catch (exception $ex) {
+            var_dump($ex);
         }
+        if (true) {
+            //quests laten zien
+            while ($row = $result->fetch_assoc()) {
+                echo "<center>" . "<h2 class='Subtitle'> Titel: " . $row["titel"] . "</h2>" . "<br>" . "<h2 class='subtitle'> beschrijving:" . $row["beschrijving"] . "</h2>" . "&nbsp;" . "<h3 class='subtitle'> Punten: " . $row["punten"] . "&nbsp;" . "</h3>" . "</center>";
+            }
+        } else {
+            echo "Geen quests beschikbaar.";
+        }
+        $conn->close();
     } else {
-        echo "Geen quests beschikbaar.";
+        header("Location: inlog.php");
+        exit();
     }
-    $conn->close();
-} else {
-    header("Location: inlog.php");
-    exit();
-}
-    ?>
-    </div>
-</body>
+        ?>
+        </div>
+    </body>
+    <footer>
+        <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+    </footer>
 
-</html>
+    </html>

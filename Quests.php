@@ -46,7 +46,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         if ($result > 0) {
             //quests laten zien
             while ($row = $result->fetch_assoc()) {
-                echo "<div class='QDiv'>" . "<br>" . "Titel: " . $row["titel"] . "," . "&nbsp;" . "Punten: " . $row["punten"] . "&nbsp;" . "<a href='./questdetails.php?id=" . $row['id'] . "'>details bekijken  </a>" . "</div>";
+                echo "<div class='QDiv'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "<a href='./questdetails.php?id=" . $row['id'] . "'>details bekijken  </a>" . "</div>";
             }
         } else {
             echo "Geen quests beschikbaar.";
@@ -59,5 +59,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         ?>
     </div>
 </body>
+<footer>
+    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+</footer>
 
 </html>

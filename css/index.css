@@ -73,3 +73,17 @@ button:hover {
     text-align: center;
     text-decoration: none;
 }
+
+#HQLogo {
+    height: 100%;
+    width: auto;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
