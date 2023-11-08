@@ -112,7 +112,8 @@
   </div>
 </body>
 <footer>
-  <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
 </footer>
+<footer>
 
 </html>

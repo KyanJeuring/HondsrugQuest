@@ -26,10 +26,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     </nav>
     <h2 class="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>. </h2>
     <hr>
-</body>
-<footer>
+    <footer>
     <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
 </footer>
+</body>
+
 
 </html>
 <?php

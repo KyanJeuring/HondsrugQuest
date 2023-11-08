@@ -66,9 +66,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     }
         ?>
         </div>
-    </body>
-    <footer>
+        <footer>
         <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
     </footer>
+    </body>
 
     </html>
