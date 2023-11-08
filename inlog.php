@@ -110,10 +110,9 @@
     }
     ?>
   </div>
-</body>
-<footer>
+  <footer>
     <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
 </footer>
-<footer>
+</body>
 
 </html>
