@@ -66,9 +66,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         exit();
     }
         ?>
-        <form>
-            <a href="https://hondsrugcollege.com/hondsrugquest/php/verifyquest.php?id=<?php echo $_GET['id']; ?>">TEST</a>
-         <button onclick='window.location="https://hondsrugcollege.com/hondsrugquest/php/verifyquest.php?id=<?php echo $_GET['id']; ?>"' class="SubTitle2"> verifieer quest</button>
+        <form action="https://hondsrugcollege.com/hondsrugquest/php/verifyquest.php?id=<?php echo $_GET['id'];?>" method="POST">
+         <button type="submit" class="SubTitle2"> verifieer quest</button>
+        </form>
         </div>
         <footer>
         <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">

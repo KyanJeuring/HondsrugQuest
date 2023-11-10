@@ -2,6 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
+  if ('uName' === 'Admin' && 'Email' === 'admin@hondsrugquest.nl' && 'id' === '1') {
 ?>
 <html>
 
@@ -100,7 +101,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
       }
     }
   }
+} 
 }
+
+
   ?>
   <footer>
     <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
