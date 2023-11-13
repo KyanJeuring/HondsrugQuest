@@ -35,7 +35,11 @@
     <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"' class="SubTitle2">Mail
       vergeten?</button>
     <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
-    <?php
+     </div>
+  <footer>
+    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+</footer>
+<?php
     $servername = "127.0.0.1";
     $username = "hondsrug_hondsrugquest";
     $password = "hondsrugquest";
@@ -109,10 +113,6 @@
       exit();
     }
     ?>
-  </div>
-  <footer>
-    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
-</footer>
 </body>
 
 </html>
