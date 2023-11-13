@@ -36,8 +36,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             <li><a href="./logout.php">Uitloggen</a></li>
         </ul>
     </nav>
-<h2 class="SubTitle">Quest nummer: <?php echo $_GET['id']; ?> </h2>
+<h2 class="SubTitle">Verifiëren </h2>
 <hr>
+<div>
+<form id="FInlog" action="verifyquest.php" method="post">
+      <h2 class="subTitle">verificatiecode:</h2>
+      <input placeholder="Vul de verificatiecode in..." type="text" name="VerCode" id="VerCode">  
+    </form>
+    <button form="FInlog" type="submit" class="SubTitle2">Verifieer!</button>
+</div>
 <footer>
     <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
 </footer>
