@@ -104,7 +104,7 @@
             }
           }
         } else {
-          echo "<h2 class='subtitle'>" . "gegevens kloppen niet!" . "</h2>";
+          echo "<h2 class='gKN'>" . "gegevens kloppen niet!" . "</h2>";
         }
       } else {
         print_r($error);
