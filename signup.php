@@ -18,7 +18,7 @@
 
         </ul>
     </nav>
-    <h1 id="pageTitle">Account aanmaken</h1>
+    <h1 class="pageTitle">Account aanmaken</h1>
     <hr>
     <div>
     <form class="loginform" method="post" action="signup.php">

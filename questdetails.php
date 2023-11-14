@@ -37,6 +37,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             </ul>
         </nav>
         <h1 class="pageTitle">Quests details</h1>
+        <hr>
         <div>
             <h2 class="SubTitle">Quest nummer: <?php echo $_GET['id']; ?> </h2>
            

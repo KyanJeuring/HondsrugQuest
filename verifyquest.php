@@ -27,13 +27,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 </head>
 <body>
 <nav>
-        <ul id="navBarLeft">
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./Quests.php">Quests</a></li>
-            <li><a href="./leaderboard.php">Leaderboard</a></li>
-        </ul>
         <ul id="navBarRight">
-            <li><a href="./logout.php">Uitloggen</a></li>
+            <li><a href="./questdetails.php">Terug</a></li>
         </ul>
     </nav>
 <h2 class="SubTitle">Verifiëren </h2>
