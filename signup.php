@@ -2,43 +2,43 @@
 <html lang="nl">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Signup</title>
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
 </head>
 
 <body>
-  <nav>
-    <ul id="navBarRight">
-      <li><a class="active" href="./signup.php">Sign up</a></li>
-      <li><a href="./inlog.php">Login</a></li>
+    <nav>
+        <ul id="navBarRight">
+            <li><a class="active" href="./signup.php">Sign up</a></li>
+            <li><a href="./inlog.php">Login</a></li>
 
-    </ul>
-  </nav>
-  <h1 class="pageTitle">Account aanmaken</h1>
-  <hr>
-  <div>
-    <form id="FSignup" method="post" action="signup.php">
-      <h2 class="subTitle">Gebruikersnaam:</h2>
-      <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
-      <br>
-      <h2 class="subTitle">E-mail:</h2>
-      <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-      <br>
-      <h2 class="subTitle">Wachtwoord:</h2>
-      <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
-      <br>
-      <h2 class="subTitle">Wachtwoord herhalen:</h2>
-      <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
-      <br><br>
+        </ul>
+    </nav>
+    <h1 id="pageTitle">Account aanmaken</h1>
+    <hr>
+    <div>
+    <form class="loginform" method="post" action="signup.php">
+        <h2 id="subTitle">Gebruikersnaam:</h2>
+        <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
+        <br>
+        <h2 id="subTitle">E-mail:</h2>
+        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+        <br>
+        <h2 id="subTitle">Wachtwoord:</h2>
+        <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
+        <br>
+        <h2 id="subTitle">Wachtwoord herhalen:</h2>
+        <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
+        <br><br>  
+        <input type="submit" value="Meld aan" id="submit">
     </form>
-    <button form="FSignup" type="submit" class="SubTitle2">Meld Aan!</button>
-    <h3 class="SubTitle2"> Al een account? Klik <a href="./inlog.php">hier</a>.</h3>
-  </div>
-  <?php
+    <h3 id="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
+</div>
+    <?php
   $servername = "127.0.0.1";
   $username = "hondsrug_hondsrugquest";
   $password = "hondsrugquest";
@@ -95,7 +95,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $uName, $pWord, $Email);
       } catch (exception $ex) {
-        var_dump($ex);
+        echo "Oeps, er is iets foutgegaan.";
       }
 
       if ($stmt->execute() === TRUE) {
@@ -109,9 +109,6 @@
   }
 
   ?>
-  <footer>
-  <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
-</footer>
 </body>
 
 </html>
