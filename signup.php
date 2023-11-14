@@ -36,7 +36,7 @@
         <br><br>  
         <input type="submit" value="Meld aan" class="submit">
     </form>
-    <h3 id="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
+    <h3 class="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
 </div>
     <?php
   $servername = "127.0.0.1";
