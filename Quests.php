@@ -28,10 +28,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     <hr>
     <div>
         <?php
-        $servername = "127.0.0.1";
-        $username = "hondsrug_hondsrugquest";
-        $password = "hondsrugquest";
-        $databasename = "hondsrug_hondsrugquest";
+  $servername = "127.0.0.1";
+  //$username = "hondsrug_hondsrugquest";
+  $username = "hondsrugquest@hondsrug.local";
+  $password = "hondsrugquest";
+  $databasename = "hondsrug_hondsrugquest";;
 
         // Connectie aanmaken
         $conn = new mysqli($servername, $username, $password, $databasename);
