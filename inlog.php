@@ -40,10 +40,11 @@
     <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
 </footer>
 <?php
-    $servername = "127.0.0.1";
-    $username = "hondsrug_hondsrugquest";
-    $password = "hondsrugquest";
-    $databasename = "hondsrug_hondsrugquest";
+  $servername = "127.0.0.1";
+  //$username = "hondsrug_hondsrugquest";
+  $username = "hondsrugquest@hondsrug.local";
+  $password = "hondsrugquest";
+  $databasename = "hondsrug_hondsrugquest";
 
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
