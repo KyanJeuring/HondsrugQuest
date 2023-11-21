@@ -11,6 +11,12 @@ div {
     margin: auto;
     padding: 2%;
 }
+.QLink {
+    font-family: UniSans, Verdana, Arial, sans-serif;
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+}
 
 .QDiv {
     border: 5px solid #00b0c4;
@@ -20,9 +26,6 @@ div {
     width: 80%;
     margin-bottom: 1%;
     padding: 1%;
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    font-size: 100%;
-    text-decoration: none;
 }
 
 form {
