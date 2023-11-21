@@ -28,7 +28,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 <body>
 <nav>
         <ul id="navBarRight">
-            <li><a href="./questdetails.php">Terug</a></li>
+            <li><a href="./questdetails .php">Terug</a></li>
         </ul>
     </nav>
 <h2 class="SubTitle">Verifiëren </h2>
@@ -45,6 +45,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 </footer>
 </body>
 <?php
+
+$uName = validate($_POST['uName']);
+
     } else {
         header("Location: inlog.php");
         exit();

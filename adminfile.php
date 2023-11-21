@@ -21,8 +21,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             <li><a href="./logout.php">Uitloggen</a></li>
         </ul>
     </nav>
-    <h1 id="pageTitle">Admin Page</h1>
-    <h2 id="subTitle">Hallo, <?php echo $_SESSION['uName']; ?>.</h2>
+    <h1 class="pageTitle">Admin Pagina</h1>
     <hr>
     <h2 class="subTitle">Quest aanmaken:</h2>
     <div>
@@ -35,6 +34,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             <br>
             <h2 class="subTitle">Punten:</h2>
             <input type="number" min="0" max="5" name="punten" id="punten">
+            <br>
+            <h2 class="subTitle"> Verificatiecode: </h2>
+            <input placeholder="voer een verificatiecode in..." type="text" name="VerCode" id="VerCode">
             <br><br>
         </form>
         <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
@@ -49,6 +51,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
     $punten = $_POST['punten'];
+    $VerCode = $_POST['VerCode'];
 
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
@@ -64,6 +67,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     }
     if (empty($punten)) {
       $error[] = "Punten zijn vereist!";
+    }
+    if (empty($VerCode)) {
+      $error[] = "verificatiecode is vereist!";
     }
     // Checken als er geen errors zijn
     if (count($error) != 0) {
@@ -82,11 +88,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         echo "titel bestaat al";
         exit();
       } else {
-        $sql = "INSERT INTO Quest (titel, beschrijving, punten)
-              VALUES (?,?,?)";
+        $sql = "INSERT INTO Quest (titel, beschrijving, punten, VerCode)
+              VALUES (?,?,?,?)";
         try {
           $stmt = $conn->prepare($sql);
-          $stmt->bind_param("sss", $titel, $beschrijving, $punten);
+          $stmt->bind_param("ssss", $titel, $beschrijving, $punten, $VerCode);
         } catch (exception $ex) {
           echo "Oeps, er is iets foutgegaan.";
         }
