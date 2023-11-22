@@ -28,6 +28,16 @@ div {
     padding: 1%;
 }
 
+.QDiv:hover {
+    border: 5px solid #ff7d00;
+    text-align: center;
+    text-wrap: wrap;
+    border-radius: 20px;
+    width: 80%;
+    margin-bottom: 1%;
+    padding: 1%;
+}
+
 form {
     text-align: center;
 }
