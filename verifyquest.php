@@ -4,8 +4,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 
 
     $servername = "127.0.0.1";
-    //$username = "hondsrug_hondsrugquest";
-    $username = "hondsrugquest@hondsrug.local";
+    $username = "hondsrug_hondsrugquest";
+    //$username = "hondsrugquest@hondsrug.local";
     $password = "hondsrugquest";
     $databasename = "hondsrug_hondsrugquest";
 
