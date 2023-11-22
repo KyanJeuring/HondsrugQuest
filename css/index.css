@@ -20,6 +20,8 @@ div {
 
 .QDiv {
     border: 5px solid #00b0c4;
+    background-color: #fff;
+    color: #000;
     text-align: center;
     text-wrap: wrap;
     border-radius: 20px;
@@ -37,6 +39,12 @@ div {
     margin-bottom: 1%;
     padding: 1%;
 }
+
+.backgroundGreen .backgroundGreenHover:hover{
+    background-color: #227b56;
+    color: #fff;
+}
+
 
 form {
     text-align: center;
