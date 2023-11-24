@@ -40,8 +40,8 @@ div {
     padding: 1%;
 }
 
-.backgroundGreen .backgroundGreenHover:hover{
-    background-color: #227b56;
+.backgroundGreen, .backgroundGreenHover:hover{
+    background-color: #ff7d00;
     color: #fff;
 }
 
