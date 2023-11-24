@@ -47,7 +47,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         if ($result > 0) {
             //quests laten zien
             while ($row = $result->fetch_assoc()) {
-                echo "<a class='QLink' href='./questdetails.php?id=" . $row['id'] . "'>"."<div class='QDiv backgroundGreenHover'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "</div>" . "</a>";
+                echo "<a class='QLink' href='./questdetails.php?id=" . $row['id'] . "'>"."<div class='QDiv  backgroundGreenHover'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "</div>" . "</a>";
             }
         } else {
             echo "Geen quests beschikbaar.";
