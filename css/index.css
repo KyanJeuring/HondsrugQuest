@@ -12,7 +12,6 @@ div {
     padding: 2%;
 }
 .QLink {
-    font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 100%;
     text-decoration: none;
     color: black;
@@ -22,6 +21,7 @@ div {
     border: 5px solid #00b0c4;
     background-color: #fff;
     color: #000;
+    font-family: UniSans, Verdana, Arial, sans-serif;
     text-align: center;
     text-wrap: wrap;
     border-radius: 20px;
@@ -40,7 +40,14 @@ div {
     padding: 1%;
 }
 
-.backgroundGreen, .backgroundGreenHover:hover{
+.activeUser {
+    border: 5px solid #227b56;
+    background-color: #00ad5c;
+    color: #fff;
+}
+
+.backgroundOrange, .backgroundOrangeHover:hover{
+    border: 5px solid #a75000;
     background-color: #ff7d00;
     color: #fff;
 }

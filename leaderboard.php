@@ -42,16 +42,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT * FROM ";
+            $sql = "SELECT uName FROM Inloggegevens WHERE uName != 'Admin'";
             $result = $conn->query($sql);
     
             if ($result > 0) {
                 //quests laten zien
                 while ($row = $result->fetch_assoc()) {
-                    echo "<div class='QDiv  backgroundGreenHover'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "</div>";
+                    if ($row["uName"] == $_SESSION['uName']) {
+                        echo "<div class='QDiv activeUser backgroundOrangeHover'>". $row["uName"] . "<br>" . "Punten: " . $row["x"] . "&nbsp;" . "</div>";
+                    } else {
+                        echo "<div class='QDiv  backgroundOrangeHover'>". $row["uName"] . "<br>" . "Punten: " . $row["x"] . "&nbsp;" . "</div>";
+                    }
                 }
             } else {
-                echo "Geen quests beschikbaar.";
+                echo "Geen gebruikers beschikbaar.";
             }
             $conn->close();
     ?>
