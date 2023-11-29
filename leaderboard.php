@@ -44,19 +44,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             }
             $sql = "SELECT uName FROM Inloggegevens WHERE uName != 'Admin'";
             $result = $conn->query($sql);
-    
-            if ($result > 0) {
-                //quests laten zien
-                while ($row = $result->fetch_assoc()) {
-                    if ($row["uName"] == $_SESSION['uName']) {
-                        echo "<div class='QDiv activeUser backgroundOrangeHover'>"."<h2 class='subTitleLB'>". $row["uName"] ."</h2>". "<br>" ."<h3 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h3>". "&nbsp;" . "</div>";
-                    } else {
-                        echo "<div class='QDiv subTitle backgroundOrangeHover'>". "<h2 class='subTitleLB'>". $row["uName"] ."</h2>". "<br>" ."<h3 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h3>". "&nbsp;" . "</div>";
+            // if(){
+                if ($result > 0) {
+                    //quests laten zien
+                    while ($row = $result->fetch_assoc()) {
+                        // Laat alle users zien behalve de admin user
+                        if ($row["uName"] == $_SESSION['uName']) {
+                            echo "<div class='QDiv activeUser backgroundOrangeHover'>"."<h1 class='subTitleLB'>". $row["uName"] ."</h1>". "<br>" ."<h2 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h2>". "</div>";
+                        } else {
+                            echo "<div class='QDiv backgroundOrangeHover'>". "<h1 class='subTitleLB'>". $row["uName"] ."</h1>". "<br>" ."<h2 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h2>". "</div>";
+                        }
                     }
+                } else {
+                    echo "Geen gebruikers beschikbaar.";
                 }
-            } else {
-                echo "Geen gebruikers beschikbaar.";
-            }
+            // }
             $conn->close();
     ?>
     </div>

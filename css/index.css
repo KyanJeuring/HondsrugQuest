@@ -95,6 +95,7 @@ button:hover {
 .subTitleLB {
     font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 150%;
+    padding-top: 4%;
     text-align: center;
     text-decoration: none;
 }
@@ -119,6 +120,7 @@ button:hover {
 .subTitle2LB {
     font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 100%;
+    padding-bottom: 4%;
     text-align: center;
     text-decoration: none;
 }
