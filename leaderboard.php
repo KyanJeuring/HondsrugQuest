@@ -43,7 +43,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
                 die("Connection failed: " . $conn->connect_error);
             }
             // Telt alle punten op van Quests die een user heeft gedaan en joined de id's aan elkaar die bijelkaar horen behalve de admin user
-            $sql = "SELECT SUM(punten) AS punten, uName FROM Quest INNER JOIN Progress ON Quest.id = Progress.Qid INNER JOIN Inloggegevens ON Inloggegevens.id=Progress.Uid&&Inloggegevens.id!=1 GROUP BY uName ";
+            $sql = "SELECT SUM(punten) AS punten, uName FROM Quest INNER JOIN Progress ON Quest.id = Progress.Qid INNER JOIN Inloggegevens ON Inloggegevens.id=Progress.Uid&&Inloggegevens.id!=1 GROUP BY uName ORDER BY punten DESC";
             $result = $conn->query($sql);
             // if(){
                 if ($result > 0) {
