@@ -49,9 +49,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
                 //quests laten zien
                 while ($row = $result->fetch_assoc()) {
                     if ($row["uName"] == $_SESSION['uName']) {
-                        echo "<div class='QDiv activeUser backgroundOrangeHover'>"."<h2 class='subTitle'>". $row["uName"] ."<h2>". "<br>" ."<h3 class='subTitle'>". "Punten: " . $row["x"]. "<h3>". "&nbsp;" . "</div>";
+                        echo "<div class='QDiv activeUser backgroundOrangeHover'>"."<h2 class='subTitleLB'>". $row["uName"] ."</h2>". "<br>" ."<h3 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h3>". "&nbsp;" . "</div>";
                     } else {
-                        echo "<div class='QDiv subTitle backgroundOrangeHover'>". "<h2 class='subTitle'>". $row["uName"] ."<h2>". "<br>" ."<h3 class='subTitle'>". "Punten: " . $row["x"]. "<h3>". "&nbsp;" . "</div>";
+                        echo "<div class='QDiv subTitle backgroundOrangeHover'>". "<h2 class='subTitleLB'>". $row["uName"] ."</h2>". "<br>" ."<h3 class='subTitle2LB'>". "Punten: " . $row["x"]. "</h3>". "&nbsp;" . "</div>";
                     }
                 }
             } else {
