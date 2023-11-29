@@ -90,6 +90,7 @@
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) === 1) {
           $row = mysqli_fetch_assoc($result);
+          //admin user aanmaken
           if ($row['uName'] === 'Admin' && $row['Email'] === 'admin@hondsrugquest.nl' && $row['pWord'] === 'AdminHondsrugQuest!') {
             $_SESSION['uName'] = $row['uName'];
             $_SESSION['Email'] = $row['Email'];

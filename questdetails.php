@@ -63,12 +63,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
             echo "Geen quests beschikbaar.";
         }
         $conn->close();
+
+        
     } else {
         header("Location: inlog.php");
         exit();
     }
+
         ?>
-        <form action="https://hondsrugcollege.com/hondsrugquest/php/verifyquest.php?id=<?php echo $_GET['id'];?>" method="POST">
+        <form action="verifyquest.php?id=<?php echo $_GET['id'];?>" method="POST">
          <button type="submit" class="SubTitle2"> verifieer quest</button>
         </form>
         </div>
