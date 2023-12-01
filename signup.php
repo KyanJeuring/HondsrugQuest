@@ -39,11 +39,7 @@
     <h3 class="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
 </div>
     <?php
-  $servername = "127.0.0.1";
-  $username = "hondsrug_hondsrugquest";
- // $username = "hondsrugquest@hondsrug.local";
-  $password = "hondsrugquest";
-  $databasename = "hondsrug_hondsrugquest";
+   require_once("db_config.php");
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $uName = $_POST['uName'];

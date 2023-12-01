@@ -28,11 +28,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     <hr>
     <div>
         <?php
-  $servername = "127.0.0.1";
-  $username = "hondsrug_hondsrugquest";
-  //$username = "hondsrugquest@hondsrug.local";
-  $password = "hondsrugquest";
-  $databasename = "hondsrug_hondsrugquest";;
+        require_once("db_config.php");
 
         // Connectie aanmaken
         $conn = new mysqli($servername, $username, $password, $databasename);
@@ -47,7 +43,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         if ($result > 0) {
             //quests laten zien
             while ($row = $result->fetch_assoc()) {
-                echo "<a class='QLink' href='./questdetails.php?id=" . $row['id'] . "'>"."<div class='QDiv subTitle backgroundGreenHover'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "</div>" . "</a>";
+                echo "<a class='QLink' href='./questdetails.php?id=" . $row['id'] . "'>"."<div class='QDiv subTitle'>" . "Titel: " . $row["titel"] . "<br>" . "Punten: " . $row["punten"] . "&nbsp;" . "</div>" . "</a>";
             }
         } else {
             echo "Geen quests beschikbaar.";
