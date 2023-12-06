@@ -42,11 +42,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
         <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
     </div>
     <?php
-  $servername = "127.0.0.1";
-  $username = "hondsrug_hondsrugquest";
-  //$username = "hondsrugquest@hondsrug.local";
-  $password = "hondsrugquest";
-  $databasename = "hondsrug_hondsrugquest";
+  require_once("db_config.php");
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titel = $_POST['titel'];
