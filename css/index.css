@@ -10,8 +10,11 @@ div {
     width: 75%;
     margin-top: 2%;
     margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2%;
 }
+
 .QLink {
     font-size: 100%;
     text-decoration: none;
@@ -27,6 +30,8 @@ div {
     text-wrap: wrap;
     border-radius: 20px;
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 1%;
     padding: 1%;
 }
@@ -43,7 +48,8 @@ div {
     color: #fff;
 }
 
-.backgroundOrange, .backgroundOrangeHover:hover{
+.backgroundOrange,
+.backgroundOrangeHover:hover {
     border: 5px solid #a75000;
     background-color: #ff7d00;
     color: #fff;
@@ -56,8 +62,8 @@ form {
 
 button {
     margin: 2%;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
     width: 50%;
     background-color: #ff7d00;
@@ -89,6 +95,7 @@ button:hover {
     text-align: center;
     text-decoration: none;
 }
+
 .subTitleLB {
     font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 150%;
@@ -99,13 +106,15 @@ button:hover {
 
 .gKN {
     font-family: UniSans, Verdana, Arial, sans-serif;
-    color: #ff0000;;
+    color: #ff0000;
+    ;
     font-size: 150%;
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
     text-decoration: none;
 }
+
 .subTitle2 {
     font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 100%;
@@ -114,6 +123,7 @@ button:hover {
     text-align: center;
     text-decoration: none;
 }
+
 .subTitle2LB {
     font-family: UniSans, Verdana, Arial, sans-serif;
     font-size: 100%;
