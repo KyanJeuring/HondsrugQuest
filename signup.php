@@ -21,23 +21,23 @@
     <h1 class="pageTitle">Account aanmaken</h1>
     <hr>
     <div>
-    <form class="loginform" method="post" action="signup.php">
-        <h2 class="subTitle">Gebruikersnaam:</h2>
-        <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
-        <br>
-        <h2 class="subTitle">E-mail:</h2>
-        <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-        <br>
-        <h2 class="subTitle">Wachtwoord:</h2>
-        <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
-        <br>
-        <h2 class="subTitle">Wachtwoord herhalen:</h2>
-        <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
-        <br><br>  
-        <input type="submit" value="Meld aan" class="submit">
-    </form>
-    <h3 class="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
-</div>
+        <form class="loginform" method="post" action="signup.php">
+            <h2 class="subTitle">Gebruikersnaam:</h2>
+            <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">
+            <br>
+            <h2 class="subTitle">E-mail:</h2>
+            <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+            <br>
+            <h2 class="subTitle">Wachtwoord:</h2>
+            <input placeholder="Maak een sterk wachtwoord aan..." type="password" name="pWord" id="pWord">
+            <br>
+            <h2 class="subTitle">Wachtwoord herhalen:</h2>
+            <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
+            <br><br>
+            <input type="submit" value="Meld aan" class="submit">
+        </form>
+        <h3 class="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
+    </div>
     <?php
    require_once("db_config.php");
 
@@ -45,7 +45,7 @@
     $uName = $_POST['uName'];
     $pWord = $_POST['pWord'];
     $pWord2 = $_POST['pWord2'];
-    $Email = $_POST['Email'];
+    $Email = strtolower($_POST['Email']);
 
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
