@@ -34,12 +34,12 @@
             <h2 class="subTitle">Wachtwoord herhalen:</h2>
             <input placeholder="Herhaal uw wachtwoord..." type="password" name="pWord2" id=pWord2>
             <br><br>
-            <input type="submit" value="Meld aan" class="submit">
+            <button type="submit" class="SubTitle2">Meld aan</button>
         </form>
         <h3 class="SubTitle2"> Al een account? Klik <a href="./login.php">hier</a>.</h3>
     </div>
     <?php
-   require_once("db_config.php");
+  require_once("db_config.php");
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $uName = $_POST['uName'];
@@ -105,8 +105,11 @@
     }
   }
 
-//  tast
+  //  tast
   ?>
+    <footer>
+        <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+    </footer>
 </body>
 
 </html>

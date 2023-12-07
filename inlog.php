@@ -2,44 +2,45 @@
 <html lang="nl">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Login</title>
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Login</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
 </head>
 
 <body>
-  <nav>
-    <ul id="navBarRight">
-      <li><a href="./signup.php">Sign up</a></li>
-      <li><a class="active" href="./inlog.php">Login</a></li>
-    </ul>
-  </nav>
-  <h1 class="pageTitle">Login</h1>
-  <hr>
-  <div>
-    <form id="FInlog" action="inlog.php" method="post">
-      <h2 class="subTitle">Gebruikersnaam:</h2>
-      <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
-      <br>
-      <h2 class="subTitle">E-mail:</h2>
-      <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-      <br>
-      <h2 class="subTitle">Wachtwoord:</h2>
-      <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
-      <br><br>
-    </form>
-    <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
-    <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"' class="SubTitle2">Mail
-      vergeten?</button>
-    <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
-     </div>
-  <footer>
-    <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
-</footer>
-<?php
+    <nav>
+        <ul id="navBarRight">
+            <li><a href="./signup.php">Sign up</a></li>
+            <li><a class="active" href="./inlog.php">Login</a></li>
+        </ul>
+    </nav>
+    <h1 class="pageTitle">Login</h1>
+    <hr>
+    <div>
+        <form id="FInlog" action="inlog.php" method="post">
+            <h2 class="subTitle">Gebruikersnaam:</h2>
+            <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
+            <br>
+            <h2 class="subTitle">E-mail:</h2>
+            <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
+            <br>
+            <h2 class="subTitle">Wachtwoord:</h2>
+            <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
+            <br><br>
+        </form>
+        <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
+        <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"'
+            class="SubTitle2">Mail
+            vergeten?</button>
+        <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
+    </div>
+    <footer>
+        <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+    </footer>
+    <?php
  require_once("db_config.php");
 
     // Connectie aanmaken
@@ -62,7 +63,7 @@
       }
       $uName = validate($_POST['uName']);
       $pWord = validate($_POST['pWord']);
-      $Email = validate($_POST['Email']);
+      $Email = validate(strtolower($_POST['Email']));
 
       // Error array aanmaken
       $error = [];
