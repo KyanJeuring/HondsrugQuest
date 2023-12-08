@@ -4,111 +4,119 @@ error_reporting(E_ALL);
 if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
   if ($_SESSION['uName'] === 'Admin' && $_SESSION['Email'] === 'admin@hondsrugquest.nl' && $_SESSION['id'] === '1') {
 ?>
-<html>
+    <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hondsrug Quest</title>
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-</head>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Hondsrug Quest</title>
+      <link rel="icon" href="assets/favicon.ico" />
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    </head>
 
-<body>
-    <nav>
+    <body>
+      <nav>
         <ul id="navBarRight">
-            <li><a href="./logout.php">Uitloggen</a></li>
+          <li><a href="./logout.php">Uitloggen</a></li>
         </ul>
-    </nav>
-    <h1 class="pageTitle">Admin Pagina</h1>
-    <hr>
-    <h2 class="subTitle">Quest aanmaken:</h2>
-    <div>
+      </nav>
+      <h1 class="pageTitle">Admin Pagina</h1>
+      <hr>
+      <h2 class="subTitle">Quest aanmaken:</h2>
+      <div>
         <form action="adminfile.php" method="post" id="FQuest">
-            <h2 class="subTitle">Titel:</h2>
-            <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">
-            <br>
-            <h2 class="subTitle">Beschrijving:</h2>
-            <input placeholder="voer een beschrijving in..." type="text" name="beschrijving" id="beschrijving">
-            <br>
-            <h2 class="subTitle">Punten:</h2>
-            <input type="number" min="0" max="5" name="punten" id="punten">
-            <br>
-            <h2 class="subTitle"> Verificatiecode: </h2>
-            <input placeholder="voer een verificatiecode in..." type="text" name="VerCode" id="VerCode">
-            <br><br>
+          <h2 class="subTitle">Titel:</h2>
+          <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">
+          <br>
+          <h2 class="subTitle">Locatie:</h2>
+          <input placeholder="Voer een locatie in..." type="text" name="locatie" id="locatie">
+          <br>
+          <h2 class="subTitle">Beschrijving:</h2>
+          <input placeholder="voer een beschrijving in..." type="text" name="beschrijving" id="beschrijving">
+          <br>
+          <h2 class="subTitle">Punten:</h2>
+          <input type="number" min="0" max="5" name="punten" id="punten">
+          <br>
+          <h2 class="subTitle"> Verificatiecode: </h2>
+          <input placeholder="voer een verificatiecode in..." type="text" name="VerCode" id="VerCode">
+          <br><br>
         </form>
         <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
-    </div>
-    <?php
-  require_once("db_config.php");
+      </div>
+  <?php
+    require_once("db_config.php");
 
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titel = $_POST['titel'];
-    $beschrijving = $_POST['beschrijving'];
-    $punten = $_POST['punten'];
-    $VerCode = $_POST['VerCode'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $titel = $_POST['titel'];
+      $locatie = $_POST['locatie'];
+      $beschrijving = $_POST['beschrijving'];
+      $punten = $_POST['punten'];
+      $VerCode = $_POST['VerCode'];
 
-    // Connectie aanmaken
-    $conn = new mysqli($servername, $username, $password, $databasename);
+      // Connectie aanmaken
+      $conn = new mysqli($servername, $username, $password, $databasename);
 
-    // Error array aanmaken
-    $error = [];
-    // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
-    if (empty($titel)) {
-      $error[] = "Titel is vereist!";
-    }
-    if (empty($beschrijving)) {
-      $error[] = "Beschrijving is vereist!";
-    }
-    if (empty($punten)) {
-      $error[] = "Punten zijn vereist!";
-    }
-    if (empty($VerCode)) {
-      $error[] = "verificatiecode is vereist!";
-    }
-    // Checken als er geen errors zijn
-    if (count($error) != 0) {
-      print_r($error);
-    } else {
-
-
-
-      // Connectie checken
-      if ($conn->connect_error) {
-        die("Connectie gefaald: " . $conn->connect_error);
+      // Error array aanmaken
+      $error = [];
+      // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
+      if (empty($titel)) {
+        $error[] = "Titel is vereist!";
       }
-      echo "Connectie succesvol.";
-      $sql = mysqli_query($conn, "SELECT * from Quest WHERE titel ='$titel'");
-      if (mysqli_num_rows($sql) > 0) {
-        echo "titel bestaat al";
-        exit();
+      if (empty($locatie)) {
+        $error[] = "Locatie is vereist!";
+      }
+      if (empty($beschrijving)) {
+        $error[] = "Beschrijving is vereist!";
+      }
+      if (empty($punten)) {
+        $error[] = "Punten zijn vereist!";
+      }
+      if (empty($VerCode)) {
+        $error[] = "verificatiecode is vereist!";
+      }
+      // Checken als er geen errors zijn
+      if (count($error) != 0) {
+        print_r($error);
       } else {
-        $sql = "INSERT INTO Quest (titel, beschrijving, punten, VerCode)
-              VALUES (?,?,?,?)";
-        try {
-          $stmt = $conn->prepare($sql);
-          $stmt->bind_param("ssss", $titel, $beschrijving, $punten, $VerCode);
-        } catch (exception $ex) {
-          echo "Oeps, er is iets foutgegaan.";
-        }
 
-        if ($stmt->execute() === TRUE) {
-          echo "Nieuwe quest succesvol aangemaakt.";
+
+
+        // Connectie checken
+        if ($conn->connect_error) {
+          die("Connectie gefaald: " . $conn->connect_error);
+        }
+        echo "Connectie succesvol.";
+        $sql = mysqli_query($conn, "SELECT * from Quest WHERE titel ='$titel'");
+        if (mysqli_num_rows($sql) > 0) {
+          echo "titel bestaat al";
+          exit();
         } else {
-          echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+          $sql = "INSERT INTO Quest (titel, locatie, beschrijving, punten, VerCode)
+              VALUES (?,?,?,?,?)";
+          try {
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssss", $titel, $locatie, $beschrijving, $punten, $VerCode);
+          } catch (exception $ex) {
+            echo "Oeps, er is iets foutgegaan.";
+          }
 
-        $conn->close();
+          if ($stmt->execute() === TRUE) {
+            echo "Nieuwe quest succesvol aangemaakt.";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+
+          $conn->close();
+        }
       }
     }
   }
-} 
 }
 
 
   ?>
 
-</body>
-</html>
+    </body>
+
+    </html>
