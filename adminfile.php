@@ -1,8 +1,8 @@
 <?php
 session_start();
 error_reporting(E_ALL);
-if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
-  if ($_SESSION['uName'] === 'Admin' && $_SESSION['Email'] === 'admin@hondsrugquest.nl' && $_SESSION['id'] === '1') {
+if (isset($_SESSION['Uid']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
+  if ($_SESSION['uName'] === 'Admin' && $_SESSION['Email'] === 'admin@hondsrugquest.nl' && $_SESSION['Uid'] === '1') {
 ?>
     <html>
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
+if (isset($_SESSION['Uid']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
 
     require_once("db_config.php");
 
@@ -14,33 +14,33 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
 
 ?>
 
-<html lang="nl">
-
-<head>
+    <html lang="nl">
 
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Details van de Quest</title>
-        <link rel="icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/navBar.css" />
-    </head>
 
-<body>
-    <nav>
-        <ul id="navBarRight">
-            <li><a href="./Quests.php">Terug</a></li>
-        </ul>
-    </nav>
-    <h1 class="pageTitle">Quests details</h1>
-    <hr>
-    <div>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Details van de Quest</title>
+            <link rel="icon" href="assets/favicon.ico" />
+            <link rel="stylesheet" type="text/css" href="css/index.css" />
+            <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+        </head>
+
+    <body>
+        <nav>
+            <ul id="navBarRight">
+                <li><a href="./Quests.php">Terug</a></li>
+            </ul>
+        </nav>
+        <h1 class="pageTitle">Quests details</h1>
+        <hr>
+        <div>
         <?php
-        $sql = "SELECT * FROM `Quest` WHERE `id` = ?";
+        $sql = "SELECT * FROM `Quest` WHERE `Qid` = ?";
         try {
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $_GET['id']);
+            $stmt->bind_param("s", $_GET['Qid']);
             $stmt->execute();
             $result = $stmt->get_result();
         } catch (exception $ex) {
@@ -61,13 +61,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['uName']) && isset($_SESSION['Emai
     }
 
         ?>
-        <form action="verifyquest.php?id=<?php echo $_GET['id']; ?>" method="POST">
-            <button type="submit" class="SubTitle2"> verifieer quest</button>
+        <form action="verifyquest.php?Qid=<?php echo $_GET['Qid']; ?>" method="POST">
+            <button type="submit" class="SubTitle2"> Voltooi Quest!</button>
         </form>
-    </div>
-    <footer>
-        <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
-    </footer>
-</body>
+        </div>
+        <footer>
+            <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+        </footer>
+    </body>
 
-</html>
+    </html>
