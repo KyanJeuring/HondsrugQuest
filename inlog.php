@@ -24,9 +24,6 @@
       <h2 class="subTitle">Gebruikersnaam:</h2>
       <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">
       <br>
-      <h2 class="subTitle">E-mail:</h2>
-      <input placeholder="Vul uw Emailadress in..." type="email" name="Email" id="Email">
-      <br>
       <h2 class="subTitle">Wachtwoord:</h2>
       <input placeholder="Vul uw wachtwoord in..." type="password" name="pWord" id="pWord">
       <br><br>
