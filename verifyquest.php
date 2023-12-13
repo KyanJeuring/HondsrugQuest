@@ -31,58 +31,55 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName']) && isset($_SESSION['Ema
                 <li><a href="./questdetails.php?Qid=<?php echo $_GET['Qid']; ?>">Terug</a></li>
             </ul>
         </nav>
-        <h2 class="SubTitle">Voltooi Quest <?php echo $_GET['Qid']; ?> </h2>
+        <h2 class="SubTitle">Voltooi Quest</h2>
         <hr>
-        <div>
-            <form id="FInlog" action="verifyquest.php?Qid=<?php echo $_GET['Qid']; ?>" method="post">
-                <h2 class="subTitle">verificatiecode:</h2>
-                <input placeholder="Vul de verificatiecode in..." type="text" name="VerCode" id="VerCode">
-            </form>
-            <button form="FInlog" type="submit" class="SubTitle2">Voltooi Quest!</button>
-        </div>
+        <?php
+            function validate($data)
+            {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+
+            $verCode = validate($_POST['VerCode']);
+            $Qid = $_GET['Qid'];
+            $Uid = $_SESSION['Uid'];
+            $VerCode = $_GET['VerCode'];
+
+            $sql = "SELECT * FROM Progress WHERE Qid='$Qid' AND Uid='$Uid'";
+            $result = mysqli_query($conn, $sql);
+            // Check als de quest al eerder is voltooid
+            if (mysqli_num_rows($result) === 0) {
+                $sql = "SELECT * FROM Quest WHERE Qid='$Qid' AND VerCode='$VerCode'";
+                $result = mysqli_query($conn, $sql);
+                // Check als de VerCode klopt
+                if (mysqli_num_rows($result) === 1){
+                    $sql = "INSERT INTO `Progress` (`Uid`, `Qid`)
+                VALUES (?,?)";
+                    try {
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("ii", $Uid, $Qid);
+                    } catch (exception $ex) {
+                        echo "<div class='QDiv subTitle'>" . "Oeps, er is iets foutgegaan!" . "</div>";
+                        var_dump($ex);
+                    }
+                    if ($stmt->execute() === TRUE) {
+                        echo "<div class='QDiv subTitle'>" . "De quest is voltooid" . "</div>";
+                    } else {
+                        echo "Error: " . $sql . "<br>" . $conn->error;
+                    }
+                } else {
+                    echo "<div class='QDiv subTitle'>" . "De quest kan met deze code niet voltooid worden!" . "</div>";
+                }
+            } else {
+                echo "<div class='QDiv subTitle'>" . "U heeft de quest al voltooid!". "</div>";
+            }
+        }
+        ?>
         <footer>
             <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
         </footer>
     </body>
-<?php
-
-    function validate($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    $verCode = validate($_POST['VerCode']);
-    $Qid = $_GET['Qid'];
-    $Uid = $_SESSION['Uid'];
-
-    $sql = "SELECT * FROM Quest WHERE Qid='$Qid' AND VerCode='$verCode'";
-
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
-        $sql = "INSERT INTO `Progress` (`Uid`, `Qid`)
-          VALUES (?,?)";
-        try {
-
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ii", $Uid, $Qid);
-        } catch (exception $ex) {
-            echo "Oeps, er is iets foutgegaan.";
-            var_dump($ex);
-        }
-
-        if ($stmt->execute() === TRUE) {
-            echo "Nieuw account succesvol aangemaakt.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    } else {
-        echo 'hoi';
-    }
-}
-?>
-
-    </html>
+</html>

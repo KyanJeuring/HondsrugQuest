@@ -61,9 +61,6 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName']) && isset($_SESSION['Ema
     }
 
         ?>
-        <form action="verifyquest.php?Qid=<?php echo $_GET['Qid']; ?>" method="POST">
-            <button type="submit" class="SubTitle2"> Voltooi Quest!</button>
-        </form>
         </div>
         <footer>
             <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
