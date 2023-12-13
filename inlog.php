@@ -48,7 +48,7 @@
   }
   // echo "Connected successfully";
 
-  if (isset($_POST['uName']) && isset($_POST['Email']) && isset($_POST['pWord'])) {
+  if (isset($_POST['uName']) && isset($_POST['pWord'])) {
     // Validatie proces
     function validate($data)
     {
@@ -59,16 +59,12 @@
     }
     $uName = validate($_POST['uName']);
     $pWord = validate($_POST['pWord']);
-    $Email = validate(strtolower($_POST['Email']));
 
     // Error array aanmaken
     $error = [];
     // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
     if (empty($uName)) {
       $error[] = "Gebruikersnaam is vereist!";
-    }
-    if (empty($Email)) {
-      $error[] = "Email is vereist!";
     }
     if (empty($pWord)) {
       $error[] = "Wachtwoord is vereist!";
@@ -79,21 +75,19 @@
     if (count($error) == 0) {
 
       // Checken als de gegevens overeenkomen
-      $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND Email='$Email' AND pWord='$pWord'";
+      $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND pWord='$pWord'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         //admin user aanmaken
-        if ($row['uName'] === 'Admin' && $row['Email'] === 'admin@hondsrugquest.nl' && $row['pWord'] === 'AdminHondsrugQuest!') {
+        if ($row['uName'] === 'Admin' && $row['pWord'] === 'AdminHondsrugQuest!') {
           $_SESSION['uName'] = $row['uName'];
-          $_SESSION['Email'] = $row['Email'];
           $_SESSION['Uid'] = $row['Uid'];
           header("location: adminfile.php");
         } else {
           // Sessie aanmaken voor de gebruiker
-          if ($row['uName'] == $uName && $row['Email'] == $Email && $row['pWord'] == $pWord) {
+          if ($row['uName'] == $uName && $row['pWord'] == $pWord) {
             $_SESSION['uName'] = $row['uName'];
-            $_SESSION['Email'] = $row['Email'];
             $_SESSION['Uid'] = $row['Uid'];
             header("Location: index.php");
           }

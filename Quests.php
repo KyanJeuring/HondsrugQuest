@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['Uid']) && isset($_SESSION['uName']) && isset($_SESSION['Email'])) {
+if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
 ?>
     <html lang="nl">
 
