@@ -75,18 +75,18 @@
     if (count($error) == 0) {
 
       // Checken als de gegevens overeenkomen
-      $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName' AND pWord='$pWord'";
+      $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         //admin user aanmaken
-        if ($row['uName'] === 'Admin' && $row['pWord'] === 'AdminHondsrugQuest!') {
+        if ($row['uName'] === 'Admin' && password_verify($pWord, $row['pWord'])) {
           $_SESSION['uName'] = $row['uName'];
           $_SESSION['Uid'] = $row['Uid'];
           header("location: adminfile.php");
         } else {
           // Sessie aanmaken voor de gebruiker
-          if ($row['uName'] == $uName && $row['pWord'] == $pWord) {
+          if ($row['uName'] == $uName && password_verify($pWord, $row['pWord'])) {
             $_SESSION['uName'] = $row['uName'];
             $_SESSION['Uid'] = $row['Uid'];
             header("Location: index.php");

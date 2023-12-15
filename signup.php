@@ -46,6 +46,7 @@
     $pWord = $_POST['pWord'];
     $pWord2 = $_POST['pWord2'];
     $Email = strtolower($_POST['Email']);
+    $pwordhash = password_hash($pWord, PASSWORD_DEFAULT);
 
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
@@ -69,9 +70,7 @@
     if (count($error) == 0) {
       if ($pWord != $pWord2) {
         echo "Wachtwoorden zijn niet gelijk!";
-      } else {
-        header("Location: inlog.php");
-      }
+      } 
     } else {
       print_r($error);
     }
@@ -90,7 +89,7 @@
             VALUES (?,?,?)";
       try {
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $uName, $pWord, $Email);
+        $stmt->bind_param("sss", $uName, $pwordhash, $Email);
       } catch (exception $ex) {
         echo "Oeps, er is iets foutgegaan.";
       }
