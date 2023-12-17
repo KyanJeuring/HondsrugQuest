@@ -14,16 +14,21 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
     </head>
 
     <body>
-        <nav>
-            <ul id="navBarLeft">
-                <li><a class="active" href="./index.php">Home</a></li>
-                <li><a href="./Quests.php">Quests</a></li>
-                <li><a href="./leaderboard.php">Leaderboard</a></li>
-            </ul>
+        <header class="header">   
+              <nav>
+                <input class="dropdown-menu" type="checkbox" id="dropdown-menu" />
+                <label class = "menu-icon" for="dropdown-menu"><span class="navicon">
+                </span> </label> 
+                <ul class="menu"> 
+                    <li><a class="active" href="./index.php">Home</a></li>
+                    <li><a href="./Quests.php">Quests</a></li>
+                    <li><a href="./leaderboard.php">Leaderboard</a></li>
+             </ul>
             <ul id="navBarRight">
                 <li><a href="./logout.php">Uitloggen</a></li>
             </ul>
         </nav>
+    </header>
         <h2 class="pageTitle">Hallo, <?php echo $_SESSION['uName']; ?>. </h2>
         <hr>
         <footer>
