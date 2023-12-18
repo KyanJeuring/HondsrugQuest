@@ -4,6 +4,8 @@ nav {
     overflow: hidden;
     background-color: #fff;
     font-family: UniSans, Verdana, Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav>ul>li {
