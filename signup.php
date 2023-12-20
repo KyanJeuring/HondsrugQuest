@@ -96,6 +96,11 @@
 
       if ($stmt->execute() === TRUE) {
         echo "Nieuw account succesvol aangemaakt.";
+       
+          $_SESSION['uName'] = $row['uName'];
+          $_SESSION['Uid'] = $row['Uid'];
+          header("Location: index.php");
+        
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }

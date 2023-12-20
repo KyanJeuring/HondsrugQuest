@@ -23,11 +23,12 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
                     <li><a href="./index.php">Home</a></li>
                     <li><a class="active" href="./Quests.php">Quests</a></li>
                     <li><a href="./leaderboard.php">Leaderboard</a></li>
-             </ul>
             <ul id="navBarRight">
                 <li><a href="./logout.php">Uitloggen</a></li>
+              </ul>
             </ul>
         </nav>
+</header>
         <h1 class="pageTitle">Quests</h1>
         <hr>
         <div>
