@@ -96,10 +96,14 @@
 
       if ($stmt->execute() === TRUE) {
         echo "Nieuw account succesvol aangemaakt.";
-       
+        $sql = "SELECT * FROM Inloggegevens WHERE uName='$uName'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) === 1) {
+          $row = mysqli_fetch_assoc($result);
           $_SESSION['uName'] = $row['uName'];
           $_SESSION['Uid'] = $row['Uid'];
           header("Location: index.php");
+        }
         
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
