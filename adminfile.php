@@ -24,7 +24,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
       <h1 class="pageTitle">Admin Pagina</h1>
       <hr>
       <h2 class="subTitle">Quest aanmaken:</h2>
-      <div>
+      <div class="divBorder">
         <form action="adminfile.php" method="post" id="FQuest">
           <h2 class="subTitle">Titel:</h2>
           <input placeholder="Voer een titel in..." type="text" name="titel" id="titel">

@@ -19,7 +19,7 @@
   </nav>
   <h1 class="pageTitle">Login</h1>
   <hr>
-  <div>
+  <div class="divBorder">
     <form id="FInlog" action="inlog.php" method="post">
       <h2 class="subTitle">Gebruikersnaam:</h2>
       <input placeholder="Vul uw gebruikersnaam in..." type="text" name="uName" id="uName">

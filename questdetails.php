@@ -35,7 +35,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
         </nav>
         <h1 class="pageTitle">Quests details</h1>
         <hr>
-        <div>
+        <div class="divBorder">
         <?php
         $sql = "SELECT * FROM `Quest` WHERE `Qid` = ?";
         try {

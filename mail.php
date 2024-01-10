@@ -18,7 +18,7 @@
     <h1 class="pageTitle"> Wachtwoord vergeten?</h1>
     <hr>
     <h2 class="subTitle">Geen zorgen!</h2>
-    <div>
+    <div class="divBorder">
         <form action="mail.php" method="post" id="FMail">
             <h2 class="subTitle">Vul uw E-mail om uw wachtwoord per mail te ontvangen!</h2>
             <input placeholder="Vul uw Email in..." type="text" name="Email" id="Email" />

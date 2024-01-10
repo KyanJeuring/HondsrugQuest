@@ -20,7 +20,7 @@
   </nav>
   <h1 class="pageTitle">Account aanmaken</h1>
   <hr>
-  <div>
+  <div class="divBorder">
     <form class="loginform" method="post" action="signup.php">
       <h2 class="subTitle">Gebruikersnaam:</h2>
       <input placeholder="Maak een gebruikersnaam aan..." type="text" name="uName" id="uName">

@@ -19,18 +19,23 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
                 <input class="dropdown-menu" type="checkbox" id="dropdown-menu" />
                 <label class = "menu-icon" for="dropdown-menu"><span class="navicon">
                 </span> </label> 
-                <ul class="menu"> 
-                    <li><a class="active" href="./index.php">Home</a></li>
-                    <li><a href="./Quests.php">Quests</a></li>
-                    <li><a href="./leaderboard.php">Leaderboard</a></li>
-             </ul>
-            <ul id="navBarRight">
-                <li><a href="./logout.php">Uitloggen</a></li>
-            </ul>
-        </nav>
+                <div class="menu"> 
+                    <ul class="navBarLeft"> 
+                        <li><a class="active" href="./index.php">Home</a></li>
+                        <li><a href="./Quests.php">Quests</a></li>
+                        <li><a href="./leaderboard.php">Leaderboard</a></li>
+                    </ul>            
+                    <ul id="navBarRight"> 
+                        <li><a href="./logout.php">Uitloggen</a></li>
+                    </ul>
+                </div>
+         </nav>
     </header>
-        <h2 class="pageTitle">Hallo, <?php echo $_SESSION['uName']; ?>. </h2>
+        <h2 class="pageTitle">Welkom, <?php echo $_SESSION['uName']; ?>. </h2>
         <hr>
+        <h2 class="SubTitle"> Klik op 'Quests' in het menu om quests te zoeken. Is dit uw eerste keer hier? Klik dan <a href="uitleg.php"> hier </a>voor extra uitleg. </h2> 
+        <br>
+
         <footer>
             <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
         </footer>

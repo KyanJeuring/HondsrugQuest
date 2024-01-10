@@ -4,8 +4,6 @@ nav {
     overflow: hidden;
     background-color: #fff;
     font-family: UniSans, Verdana, Arial, sans-serif;
-    display: flex;
-    justify-content: space-between;
 }
 
 nav>ul>li {
@@ -144,15 +142,12 @@ nav a:hover {
 }
 
 @media (min-width: 48em) {
-    .header li {
-      float: left;
-    }
+
     .header li a {
       padding: 20px 30px;
     }
     .header .menu {
       clear: none;
-      float: left;
       max-height: none;
     }
     .header .menu-icon {

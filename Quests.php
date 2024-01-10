@@ -31,7 +31,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
 </header>
         <h1 class="pageTitle">Quests</h1>
         <hr>
-        <div>
+        <div class="divBorder">
         <?php
         require_once("db_config.php");
 
