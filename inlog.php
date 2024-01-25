@@ -62,7 +62,7 @@
 
     // Error array aanmaken
     $error = [];
-    // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
+    // Checken als alle velden zijn ingevuld zo niet dan voeg een error melding toe
     if (empty($uName)) {
       $error[] = "Gebruikersnaam is vereist!";
     }

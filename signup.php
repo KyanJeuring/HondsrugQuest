@@ -53,7 +53,7 @@
 
     // Error array aanmaken
     $error = [];
-    // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
+    // Checken als alle velden zijn ingevuld zo niet dan voeg een error melding toe
     if (empty($uName)) {
       $error[] = "Gebruikersnaam is vereist!";
     }
@@ -91,7 +91,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $uName, $pwordhash, $Email);
       } catch (exception $ex) {
-        echo "Oeps, er is iets foutgegaan.";
+        echo "Oeps, er is iets fout gegaan.";
       }
 
       if ($stmt->execute() === TRUE) {

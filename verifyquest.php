@@ -62,19 +62,19 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param("ii", $Uid, $Qid);
                     } catch (exception $ex) {
-                        echo "<div class='QDiv subTitle'>" . "Oeps, er is iets foutgegaan!" . "</div>";
+                        echo "<div class='QDiv subTitle'>" . "Oeps, er is iets fout gegaan!" . "</div>";
                         var_dump($ex);
                     }
                     if ($stmt->execute() === TRUE) {
-                        echo "<div class='QDiv subTitle'>" . "De quest is voltooid" . "</div>";
+                        echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. "is voltooid" . "</div>";
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
                 } else {
-                    echo "<div class='QDiv subTitle'>" . "De quest kan met deze code niet voltooid worden!" . "</div>";
+                    echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. "kan met deze code niet voltooid worden!" . "</div>";
                 }
             } else {
-                echo "<div class='QDiv subTitle'>" . "U heeft de quest al voltooid!". "</div>";
+                echo "<div class='QDiv subTitle'>" . "U heeft de Quest". $row["titel"]. " al voltooid!". "</div>";
             }
         }
         ?>
