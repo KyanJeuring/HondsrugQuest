@@ -39,6 +39,8 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require_once("db_config.php");
 
+$mail = new PHPMailer(true);
+
 // Connectie aanmaken
 $conn = new mysqli($servername, $username, $password, $databasename);
 
@@ -62,7 +64,7 @@ if (isset($_POST['Email'])) {
 
     // Error array aanmaken
     $error = [];
-    // Checken als alle velden zijn ingevult zo niet dan voeg een error melding toe
+    // Checken als alle velden zijn ingevuld zo niet dan voeg een error melding toe
     if (empty($Email)) {
       $error[] = "Email is vereist!";
     }
@@ -81,32 +83,38 @@ if (isset($_POST['Email'])) {
         $row = mysqli_fetch_assoc($result);
       }
     }
+
+    $mail->setLanguage('nl', '/optional/path/to/language/directory/');
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'HondsrugQuest@outlook.com';                     //SMTP username
+    $mail->Password   = 'hondsrug@quest';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 587;   
+
+      //Ontvangers
+      $mail->setFrom('HondsrugQuest@outlook.com', 'No-Reply HondsrugQuest');
+      $mail->addAddress('Joeyharms2007@gmail.com', 'Joey harms');     //Add a recipient
+     // $mail->addAddress('ellen@example.com');               //Name is optional
+      //$mail->addReplyTo('info@example.com', 'Information');
+    //  $mail->addCC('cc@example.com');
+      //$mail->addBCC('bcc@example.com');
+
+        //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Wachtwoord herstellen';
+    $mail->Body    = 'test';
+    $mail->AltBody = 'test';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 }
 
-// een key automatische key genereren 
-$key=md5(time()+123456789% rand(4000, 55000000));
-
-// de key encrypten 
-$keyhash = password_hash($key, PASSWORD_DEFAULT);
- 
-// de keyhash in de database stoppen
-
-$sql = "INSERT INTO Inloggegevens (Pword_reset)
-VALUES (?)";
-try {
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $keyhash);
-} catch (exception $ex) {
-echo "Oeps, er is iets foutgegaan.";
-}
-
-if ($stmt->execute() === TRUE) {
-echo "Nieuw account succesvol aangemaakt.";
-} else {
-echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-echo $keyhash;
 ?>
 </body>
 </html>
