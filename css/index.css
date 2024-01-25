@@ -43,19 +43,21 @@
 .QDiv:hover {
     border: 5px solid #a75000;
     background-color: #ff7d00;
+    text-wrap: wrap;
     color: #fff;
 }
 
 .activeUser {
     border: 5px solid #227b56;
     background-color: #00ad5c;
+    text-wrap: wrap;
     color: #fff;
 }
 
-.backgroundOrange,
-.backgroundOrangeHover:hover {
+.backgroundOrange, .backgroundOrangeHover:hover {
     border: 5px solid #a75000;
     background-color: #ff7d00;
+    text-wrap: wrap;
     color: #fff;
 }
 
