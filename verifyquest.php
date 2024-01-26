@@ -28,7 +28,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
     <body>
         <nav>
             <ul id="navBarRight">
-                <li><a href="./questdetails.php?Qid=<?php echo $_GET['Qid']; ?>">Terug</a></li>
+                <li><a href="./leaderboard.php">Leaderboard</a></li>
             </ul>
         </nav>
         <h2 class="SubTitle">Voltooi Quest</h2>
