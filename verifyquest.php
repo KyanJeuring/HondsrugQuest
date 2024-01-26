@@ -76,7 +76,11 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
             } else {
                 echo "<div class='QDiv subTitle'>" . "U heeft de Quest". $row["titel"]. " al voltooid!". "</div>";
             }
-        }
+        
+    } else {
+        echo "U moet eerst inloggen!";
+        exit();
+    }
         ?>
         <footer>
             <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
