@@ -76,14 +76,36 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
             } else {
                 echo "<div class='QDiv subTitle'>" . "U heeft de Quest". $row["titel"]. " al voltooid!". "</div>";
             }
-        
-    } else {
-        echo "U moet eerst inloggen!";
-        exit();
-    }
         ?>
         <footer>
             <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
         </footer>
     </body>
 </html>
+<?php
+} else {
+?>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hondsrug Quest</title>
+        <link rel="icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/navBar.css" />
+    </head>
+    <body>
+        <div class="divBorder">
+            <h2 class="SubTitle">Oeps er is iets fout gegaan!</h2>
+            <h2 class="SubTitle">U moet eerst inloggen om de Quest te voltooien!</h2>
+            <h2 class="SubTitle">Na het inloggen moet u de QR-Code opnieuw scannen!!</h2>
+            <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/inlog.php"' class="SubTitle2">Login</button>
+        </div>
+    <footer>
+        <hr><img src="./assets/HQLogo.png" alt="HondsrugQuestLogo" id="HQLogo">
+    </footer>
+    </body>
+</html>
+<?php
+    }
+?>

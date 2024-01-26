@@ -29,7 +29,7 @@
       <br><br>
     </form>
     <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
-    <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"' class="SubTitle2">Mail
+    <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/mail.php"' class="SubTitle2">Wachtwoord
       vergeten?</button>
     <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
   </div>

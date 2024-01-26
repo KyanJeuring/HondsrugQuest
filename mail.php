@@ -20,8 +20,7 @@
     <h2 class="subTitle">Geen zorgen!</h2>
     <div class="divBorder">
         <!-- <form action="mail.php" method="post" id="FMail"> -->
-            <h2 class="subTitle">Kom langs M219 (het ict lokaal in de Marke) om je wachtwoord te resetten!
-            </h2>
+            <h2 class="subTitle">Kom langs het ICT lokaal M209 in de Marke om je wachtwoord te resetten!</h2>
             <!-- <input placeholder="Vul uw Email in..." type="text" name="Email" id="Email" /> -->
             <br>
         </form>
