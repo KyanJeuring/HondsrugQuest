@@ -31,7 +31,7 @@
     color: #000;
     font-family: UniSans, Verdana, Arial, sans-serif;
     text-align: center;
-    text-wrap: wrap;
+    overflow-wrap: break-word;
     border-radius: 20px;
     width: 80%;
     margin-left: auto;
