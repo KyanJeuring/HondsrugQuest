@@ -46,15 +46,11 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
         } catch (exception $ex) {
             var_dump($ex);
         }
-        if (true) {
-            //quests laten zien
-            while ($row = $result->fetch_assoc()) {
-                echo "<center>" . "<h2 class='pageTitle'>" . $row["titel"] . "</h2>" . "<br>" . "<h2 class='Subtitle'> Locatie: " . $row["locatie"] . "</h2>" . "<br>" .  "<h2 class='subtitle'> Beschrijving:<br></h2>" . "<h2 class='subtitle2'>" . $row["beschrijving"] . "</h2>" . "&nbsp;" . "<h3 class='subtitle'> Punten: " . $row["punten"] . "&nbsp;" . "</h3>" . "</center>";
-            }
-        } else {
-            echo "Geen quests beschikbaar.";
+        //quests laten zien
+        while ($row = $result->fetch_assoc()) {
+            echo "<center>" . "<h2 class='pageTitle'>" . $row["titel"] . "</h2>" . "<br>" . "<h2 class='Subtitle'> Locatie: " . $row["locatie"] . "</h2>" . "<br>" .  "<h2 class='subtitle'> Beschrijving:<br></h2>" . "<h2 class='subtitle2'>" . $row["beschrijving"] . "</h2>" . "&nbsp;" . "<h3 class='subtitle'> Punten: " . $row["punten"] . "&nbsp;" . "</h3>" . "</center>";
         }
-        $conn->close();
+    $conn->close();
     } else {
         header("Location: inlog.php");
         exit();
