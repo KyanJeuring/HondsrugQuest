@@ -43,6 +43,8 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
           <br><br>
         </form>
         <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
+        <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/pwordchanger.php"' class="SubTitle2">Wachtwoord
+      aanpassen</button>
       </div>
   <?php
     require_once("db_config.php");
@@ -111,7 +113,10 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
         }
       }
     }
-  }
+  } else {
+    header("Location: index.php");
+    exit();
+}
 }
 
 
