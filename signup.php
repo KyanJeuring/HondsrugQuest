@@ -84,6 +84,11 @@
     if (mysqli_num_rows($sql) > 0) {
       echo "Gebruikersnaam is al in gebruik.";
       exit();
+    } else 
+    $sql = mysqli_query($conn, "SELECT * from Inloggegevens WHERE Email ='$Email'");
+    if (mysqli_num_rows($sql) > 0) {
+      echo "E-mail is al in gebruik.";
+      exit();
     } else {
       $sql = "INSERT INTO Inloggegevens (uName, pWord, Email)
             VALUES (?,?,?)";

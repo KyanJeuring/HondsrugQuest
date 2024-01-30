@@ -5,10 +5,10 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
   if ($_SESSION['uName'] === 'Admin' && $_SESSION['Uid'] === '1') {
 ?>
 <html lang="nl">
-head>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Login</title>
+  <title> Wachtwoord aanpassen</title>
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css/index.css" />
   <link rel="stylesheet" type="text/css" href="css/navBar.css" />
@@ -24,8 +24,8 @@ head>
   <h1 class="pageTitle">Login</h1>
   <hr>
   <div class="divBorder">
-    <form id="FInlog" action="inlog.php" method="post">
-    <h2 class="subTitle">E-mail adres:</h2>
+    <form id="FInlog" action="pwordchanger.php" method="post">
+    <h2 class="subTitle">E-mailadres:</h2>
       <input placeholder="Vul uw E-mail adres in..." type="text" name="eMail" id="eMail">
       <br>
       <h2 class="subTitle">Wachtwoord:</h2>
@@ -89,19 +89,21 @@ head>
      $result = mysqli_query($conn, $sql);
      if (mysqli_num_rows($result) === 1) {
        echo "succes!";
+       } else {
+        echo "geen succes";
        }
 
  
     } else {
         exit;
     }
-
-
-
-
-
+  }
+}
+else {
+  header("Location: index.php");
+}
 
  }
  else {
-    exit;
+  header("Location: index.php");
  }
