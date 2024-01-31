@@ -66,12 +66,12 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
                         var_dump($ex);
                     }
                     if ($stmt->execute() === TRUE) {
-                        echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. "is voltooid" . "</div>";
+                        echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. " is voltooid" . "</div>";
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
                 } else {
-                    echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. "kan met deze code niet voltooid worden!" . "</div>";
+                    echo "<div class='QDiv subTitle'>" . "De Quest". $row["titel"]. " kan met deze code niet voltooid worden!" . "</div>";
                 }
             } else {
                 echo "<div class='QDiv subTitle'>" . "U heeft de Quest". $row["titel"]. " al voltooid!". "</div>";
