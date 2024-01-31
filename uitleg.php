@@ -24,9 +24,9 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
         <h2 class="pageTitle">Uitleg</h2>
         <hr>
         <h2 class="SubTitle">Hallo <?php echo $_SESSION['uName']; ?>,<br>Leuk dat je meedoet aan Hondsrug Quest.<br>Ga naar
-            de lokalen waar de Quests zijn en voltooi ze om zo hoog mogelijk op het Leaderboard te komen. <br>De eerste 5
+            de lokalen waar de Quests zijn en voltooi ze om zo hoog mogelijk op het Leaderboard te komen. <br>De eerste 10
             die alle Quests hebben voltooid kunnen een prijs in ontvangst nemen in het ICT lokaal M219 in de Marke.<br>Deze
-            zoektocht is van xx:xx uur tot xx:xx uur. Hierna wordt een nieuwe ronde gestart.<br>Veel plezier met de Quests!
+            zoektocht is van 14:00 uur tot 17:30 uur. Hierna wordt een nieuwe ronde gestart.<br>Veel plezier met de Quests!
         </h2>
         <br><br>
         <h2 class="SubTitle">Zou u bij het verlaten van de school nog aan ons feedback willen geven over onze Website?<br>Uw
