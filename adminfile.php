@@ -43,8 +43,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
           <br><br>
         </form>
         <button form="FQuest" type="submit" class="SubTitle2">Maak aan!</button>
-        <button onclick='window.location= "https://hondsrugcollege.com/hondsrugquest/php/pwordchanger.php"' class="SubTitle2">Wachtwoord
-      aanpassen</button>
+        <li><a href="./pwordchanger.php">wachtwoord aanpassen</a></li>
       </div>
   <?php
     require_once("db_config.php");
