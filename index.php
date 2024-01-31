@@ -31,7 +31,7 @@ if (isset($_SESSION['Uid']) && isset($_SESSION['uName'])) {
             </div>
         </nav>
     </header>
-    <h2 class="pageTitle">Welkom, <?php echo $_SESSION['uName']; ?>. </h2>
+    <h2 class="pageTitle">Welkom, <?php echo $_SESSION['uName']; ?></h2>
     <hr>
     <h2 class="SubTitle"> Klik op 'Quests' in het menu om quests te zoeken. Is dit uw eerste keer hier? Klik dan <a
             href="uitleg.php">hier</a> voor extra uitleg. </h2>
