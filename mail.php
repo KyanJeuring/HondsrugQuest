@@ -52,6 +52,7 @@ $mail = new PHPMailer();
 // Connectie aanmaken
 $conn = new mysqli($servername, $username, $password, $databasename);
 
+
 // Connectie checken
 if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
@@ -68,7 +69,7 @@ if (isset($_POST['Email'])) {
      return $data;
    }
    $Email = validate($_POST['Email']);
-   
+   $Emailhash = password_hash($Email, PASSWORD_DEFAULT);
 
     // Error array aanmaken
    $error = [];
@@ -87,10 +88,13 @@ if (isset($_POST['Email'])) {
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) === 0) {
        echo "gegevens kloppen niet!";
+       exit();
      } else {
        $row = mysqli_fetch_assoc($result);
      }
    }
+
+   $sql = "INSERT $Emailhash INTO Inloggegevens WHERE Email='$Email'";
 
    $mail->setLanguage('nl', '/optional/path/to/language/directory/');
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output

@@ -42,7 +42,6 @@
 
   // Connectie aanmaken
   $conn = new mysqli($servername, $username, $password, $databasename);
-
   // Connectie checken
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

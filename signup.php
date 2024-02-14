@@ -47,7 +47,6 @@
     $pWord2 = $_POST['pWord2'];
     $Email = strtolower($_POST['Email']);
     $pwordhash = password_hash($pWord, PASSWORD_DEFAULT);
-
     // Connectie aanmaken
     $conn = new mysqli($servername, $username, $password, $databasename);
 
