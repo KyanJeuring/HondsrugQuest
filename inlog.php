@@ -29,7 +29,7 @@
       <br><br>
     </form>
     <button form="FInlog" type="submit" class="SubTitle2">Login!</button>
-    <a href="mail.php">
+    <a href="./mail.php">
     <button> Wachtwoord vergeten?</button>
 </a>
     <h3 class="SubTitle2"> Geen account? Klik <a href="./signup.php">hier</a>.</h3>
@@ -57,7 +57,8 @@
       $data = htmlspecialchars($data);
       return $data;
     }
-    $uName = validate($_POST['uName']);
+    // $uName = validate($_POST['uName']);
+    $uName = $_POST['uName'];
     $pWord = validate($_POST['pWord']);
 
     // Error array aanmaken
