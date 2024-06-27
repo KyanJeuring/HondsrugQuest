@@ -1,7 +1,7 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -20,258 +20,261 @@
 }
 
 .QLink {
-    font-size: 100%;
-    text-decoration: none;
-    color: black;
+  font-size: 100%;
+  text-decoration: none;
+  color: black;
 }
 
 .QDiv {
-    border: 5px solid #00b0c4;
-    background-color: #fff;
-    color: #000;
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    text-align: center;
-    overflow-wrap: break-word;
-    border-radius: 20px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1%;
-    padding: 1%;
+  border: 5px solid #00b0c4;
+  background-color: #fff;
+  color: #000;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  text-align: center;
+  overflow-wrap: break-word;
+  border-radius: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  padding: 1%;
 }
 
 .QDiv:hover {
-    border: 5px solid #a75000;
-    background-color: #ff7d00;
-    text-wrap: wrap;
-    color: #fff;
+  border: 5px solid #a75000;
+  background-color: #ff7d00;
+  text-wrap: wrap;
+  color: #fff;
 }
 
 .activeUser {
-    border: 5px solid #227b56;
-    background-color: #00ad5c;
-    text-wrap: wrap;
-    color: #fff;
+  border: 5px solid #227b56;
+  background-color: #00ad5c;
+  text-wrap: wrap;
+  color: #fff;
 }
 
-.backgroundOrange, .backgroundOrangeHover:hover {
-    border: 5px solid #a75000;
-    background-color: #ff7d00;
-    text-wrap: wrap;
-    color: #fff;
+.backgroundOrange,
+.backgroundOrangeHover:hover {
+  border: 5px solid #a75000;
+  background-color: #ff7d00;
+  text-wrap: wrap;
+  color: #fff;
 }
 
 
 form {
-    text-align: center;
+  text-align: center;
 }
 
 button {
-    margin: 2%;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 5px;
-    width: 50%;
-    background-color: #ff7d00;
-    color: white;
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    border: 1px solid #ff7d00;
-    border-radius: 20px;
+  margin: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 5px;
+  width: 50%;
+  background-color: #ff7d00;
+  color: white;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  border: 1px solid #ff7d00;
+  border-radius: 20px;
 }
 
 button:hover {
-    background-color: #00b0c4;
-    border: 1px solid #00b0c4;
+  background-color: #00b0c4;
+  border: 1px solid #00b0c4;
 }
 
 .pageTitle {
-    font-family: Bebas Neue, Verdana, Arial, sans-serif;
-    font-size: 250%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    text-align: center;
-    text-decoration: none;
+  font-family: Bebas Neue, Verdana, Arial, sans-serif;
+  font-size: 250%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .subTitle {
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    font-size: 150%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    text-align: center;
-    text-decoration: none;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  font-size: 150%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .subTitleLB {
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    font-size: 150%;
-    padding-top: 4%;
-    text-align: center;
-    text-decoration: none;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  font-size: 150%;
+  padding-top: 4%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .gKN {
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    color: #ff0000;
-    ;
-    font-size: 150%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    text-align: center;
-    text-decoration: none;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  color: #ff0000;
+  ;
+  font-size: 150%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .subTitle2 {
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    font-size: 100%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    text-align: center;
-    text-decoration: none;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  font-size: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .subTitle2LB {
-    font-family: UniSans, Verdana, Arial, sans-serif;
-    font-size: 100%;
-    padding-bottom: 4%;
-    text-align: center;
-    text-decoration: none;
+  font-family: UniSans, Verdana, Arial, sans-serif;
+  font-size: 100%;
+  padding-bottom: 4%;
+  text-align: center;
+  text-decoration: none;
 }
 
 #HQLogo {
-    height: 20px;
-    width: auto;
-    margin: 2px;
+  height: 20px;
+  width: auto;
+  margin: 2px;
 }
 
 footer {
-    position: sticky;
-    display: block;
-    background-color: #fff;
-    height: 20px;
-    width: 100%;
-    padding-bottom: 1%;
-    bottom: 0;
+  position: sticky;
+  display: block;
+  background-color: #fff;
+  height: 20px;
+  width: 100%;
+  padding-bottom: 1%;
+  bottom: 0;
 }
+
 /* header stijlen gegeven */
 .header {
-    background-color: #fff;
-    position: sticky;
-    width: 100%;
-    z-index: 3;
-  }
+  background-color: #fff;
+  position: sticky;
+  width: 100%;
+  z-index: 3;
+}
 
-  /* header  ul stijlen gegeven */
-  
-  .header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    background-color: #fff;
-  }
+/* header  ul stijlen gegeven */
 
-  .header li a:hover {
-    background-color: #f4f4f4;
-  }
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
 
-  .header .logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
+.header li a:hover {
+  background-color: #f4f4f4;
+}
 
-/* menu button + icon gegeven */ 
-  .header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-  }
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
 
-  .menu{
-    width: 100%;
-  }
+/* menu button + icon gegeven */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
 
-  .header .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-  }
-  
+.menu {
+  width: 100%;
+}
 
-  .header .menu-icon .navicon {
-    background: #333;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-  }
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
 
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
-    background: #333;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-  }
 
-  .header .menu-icon .navicon:before {
-    top: 5px;
-  }
-  
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
 
-  .header .menu-icon .navicon:after {
-    top: -5px;
-  }
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
 
-  .header .dropdown-menu {
-    display: none;
-  }
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
 
-  .header .dropdown-menu:checked ~ .menu {
-    max-height: 240px;
-  }
 
-  .header .dropdown-menu:checked ~ .menu-icon .navicon {
-    background: transparent;
-  }
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
 
-  .header .dropdown-menu:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-  }
+.header .dropdown-menu {
+  display: none;
+}
 
-  .header .dropdown-menu:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-  }
+.header .dropdown-menu:checked~.menu {
+  max-height: 240px;
+}
 
-  .header .dropdown-menu:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .dropdown-menu:checked ~ .menu-icon:not(.steps) .navicon:after {
+.header .dropdown-menu:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+.header .dropdown-menu:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .dropdown-menu:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .dropdown-menu:checked~.menu-icon:not(.steps) .navicon:before,
+.header .dropdown-menu:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
 @media (min-width: 48em) {
-    .header li {
-      float: left;
-    }
-    .header li a {
-      padding: 20px 30px;
-    }
-    .header .menu {
-      clear: none;
-
-      max-height: none;
-    }
-    .header .menu-icon {
-      display: none;
-    }
+  .header li {
+    float: left;
   }
 
+  .header li a {
+    padding: 20px 30px;
+  }
 
+  .header .menu {
+    clear: none;
+
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+}
