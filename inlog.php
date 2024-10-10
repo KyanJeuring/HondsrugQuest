@@ -57,6 +57,8 @@
       $data = htmlspecialchars($data);
       return $data;
     }
+
+    // test
     // $uName = validate($_POST['uName']);
     $uName = $_POST['uName'];
     $pWord = validate($_POST['pWord']);
